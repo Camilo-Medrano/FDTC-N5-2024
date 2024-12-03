@@ -1,0 +1,82 @@
+\documentclass[12pt]{article}
+
+%Paquetes a utilizarse
+\input{Paquetes/package2.tex}
+%\usepackage[margin=2.5cm]{geometry}
+%\usepackage{wasysym}
+%\usepackage{stmaryrd,textcomp}
+%\usepackage{pgf,tikz}
+%\usetikzlibrary{arrows}
+
+\parskip = 2mm   %%%% genera un espacio de X mm entre lo párrafos
+\parindent = 3mm
+\usepackage{multicol}
+\usepackage{iwona}
+
+\newcommand{\tema}{Teorema del binomio}
+\newcommand{\fecha}{Viernes, 9 de diciembre de 2022}
+\newcommand{\sesion}{Corto 4}
+
+\begin{document}
+%\thispagestyle{empty}
+%\newpage
+\thispagestyle{empty}
+
+\begin{figure}[h] 
+	\begin{minipage}[b]{0.26\textwidth}
+		\begin{center}
+			\includegraphics[height=3cm]{Logos/UES.png}
+			\par\end{center}
+	\end{minipage} 
+	\begin{minipage}[b]{0.46\textwidth}
+		\begin{center}
+			UNIVERSIDAD DE EL SALVADOR\\ [0.1cm]
+			PROGRAMA JÓVENES TALENTO\\ [0.1cm]
+	        FDTC 2022\\ [0.1cm]
+                NIVEL 5\\ [0.1cm]
+			COMBINATORIA 
+			\par\end{center}
+	\end{minipage} 
+	\begin{minipage}[b]{0.05\textwidth}
+		\begin{center}
+			\includegraphics[height=2cm]{Logos/LOGO PJT.png}
+			\par\end{center}
+	\end{minipage}
+\end{figure}
+
+\begin{center}
+    \begin{tabular}{p{4.5cm} p{7cm} p{4.5cm}}
+        \tema & \centering\fecha & \hfill\sesion
+    \end{tabular}
+\end{center}
+
+\begin{problema}
+    Utilizar el teorema del binomio para probar la fórmula
+
+    \begin{center}
+        $2^{n} \binom{n}{0} - 2^{n-1} \binom{n}{1} + 2^{n-2} \binom{n}{2} - 2^{n-3} \binom{n}{3} + ... + (-1)^{n-1} (2) \binom{n}{n-1} + (-1)^{n} \binom{n}{n} = 1$
+    \end{center}
+
+\end{problema}
+
+\begin{problema}
+    En la expansión $(\frac{20x^3}{y^5} + \frac{y^2}{x})^{67}$ determinar:
+
+    \renewcommand{\labelenumi}{\alph{enumi})}
+    \begin{enumerate}
+        \item El vigésimo termino.
+        \item El coeficiente de $x^{23}$, si es posible (si no, argumente por qué no existe).
+    \end{enumerate}
+
+    Puede dejar su respuesta expresada con números combinatorios.
+\end{problema}
+
+\textbf{Crédito extra:} Demuestre que si $n$ es impar, la lista
+
+\begin{center}
+    $\binom{n}{1}, \binom{n}{2}, \binom{n}{3}, ... , \binom{n}{\frac{n-1}{2}}$
+\end{center}
+
+contiene una cantidad impar de términos impares.
+
+\end{document}

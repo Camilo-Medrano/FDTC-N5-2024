@@ -1,0 +1,259 @@
+\section{Principio de Casillas}
+
+\subsection{Definición}
+
+\begin{definicion}
+    El \textbf{principio de casillas} es un elemental principio de combinatoria que puede  ser  usado  para  resolver  una  variedad  de  interesantes  problemas.  El  principio  fue  formulado  por  primera  vez  de  manera  formal por Johann Peter Gustav Lejeune Dirichlet (1805-1859) y, en consecuencia,  se  le conoce  a  veces  como  el  principio  de  distribución  de Dirichlet  o  el  principio  de  la  caja  de  Dirichlet. Alternativamente, también   es  conocido  como el principio  del palomar.
+\end{definicion}
+
+\begin{teorema}
+    \textbf{(Principio de Casillas).} Si se dispone de $n$ casillas para colocar $m$ objetos y $m > n$, entonces en alguna casilla se deberan colocarse por lo menos dos objetos.
+\end{teorema}
+
+En un inicio, el principio de casillas puede parecer uno de los teoremas más evidentes de la combinatoria y, por lo tanto, se podría llegar a pensar que no tiene una gran utilidad. Sin embargo, en los problemas planteados veremos cómo esta simple idea contiene la clave para resolverlos. Por ejemplo, cuando se  reúnen 367 personas, es seguro que debe haber al menos dos personas que cumplen años el mismo día. 
+
+Pero, ¿qué tienen que ver las palomas para justificar la  válidez de esta proposición? El principio del palomar establece que, si se cuenta con $n$ nidos y una cantidad de palomas mayor que $n$, entonces sea cual fuere la distribución de palomas en los $n$ nidos, habrá al menos un nido con más de una paloma.
+
+Por lo tanto, como hay 365 o 366 posibles fechas de cumpleaños (nidos), con seguridad hay al menos dos personas del grupo de 367 (palomas) que tienen las misma fecha de cumpleaños. El principio de las casillas trata la solución de un problema de existencia, y constituye una herramienta muy útil para realizar demostraciones y resolver ciertos problemas de conteo, con resultados sorprendentes.
+
+\begin{ejemplo}
+    Entre trece personas, hay dos que nacieron el mismo mes.
+\end{ejemplo}
+
+\begin{solucion}
+    Tratamos a las personas como las palomas ($m=13$) y nuestras casillas o nidos seran los 12 meses del año ($n=12$), por lo que el principio de casillas asegura que por lo menos 2 personas nacieron el mismo mes.
+\end{solucion}
+
+\begin{ejemplo}
+    El examen de admisión a la Universidad tiene 100 preguntas de opción múltiple con 4 posibles respuestas para cada pregunta. ¿Cuántos alumnos se necesitan para garantizar que hay dos de ellos con las mismas respuestas en todo el examen?
+\end{ejemplo}
+
+\begin{solucion}
+    Hay $4^{100}$ formas diferentes de resolver el examen, y como las casillas son las diferentes formas de resolver el examen, para asegurar dos exámenes iguales, deben haber $4^{100}+1$ alumnos.
+\end{solucion}
+
+\begin{ejemplo}
+    Un cuadrado de $5 \times 5$, se divide en 25 cuadrados de $1 \times 1$.  Pruebe que, si se pintan 26 puntos sobre el cuadrado grande, hay al menos un cuadrado pequeño en el que se han pintado dos puntos.
+\end{ejemplo}
+
+\begin{solucion}
+    Tratamos los 26 puntos como los ''objetos'' y las casillas los cuadrados de $1 \times 1$.  Por el principio de casillas, hay por lo menos 2 puntos pintados en algún cuadrado de $1 \times 1$.
+\end{solucion}
+
+\begin{ejemplo}
+    Una bolsa contiene bolas de dos colores:  blanco y negro.
+    \renewcommand{\labelenumi}{\alph{enumi})}
+    \begin{enumerate}
+        \item ¿Cuál es el mínimo número de bolas que hay que extraer de la bolsa, para garantizar que hay dos del mismo color?
+        \item ¿Cuál es el mínimo número de bolas que hay que extraer de la bolsa, para garantizar 5 del mismo color?
+        \item ¿Cuál es el mínimo número de bolas que hay que extraer de la bolsa, para garantizar 10 del mismo color?
+    \end{enumerate}
+\end{ejemplo}
+
+\begin{solucion} \hfill
+    \renewcommand{\labelenumi}{\alph{enumi})}
+    \begin{enumerate}
+        \item Para este ejercicio, los nidos son los colores de las bolas, es decir, hay dos nidos (o casillas), para garantizar dos elementos en la misma casilla necesitamos extraer $2+1=3$ bolas.
+        \item Para asegurar que 5 son del mismo color y que hay 2 nidos, se tienen que extraer $4 \times 2+1=9$ bolas.
+        \item Para asegurar que 10 son del mismo color, conociendo que hay 2 nidos, se tienen que extraer $9 \times 2+1=19$ bolas.
+    \end{enumerate}
+    
+\end{solucion}
+
+\subsection{Principio de Casillas generalizado}
+
+Una versión más general del principio de casillas se puede enunciar como sigue:
+
+\begin{teorema}
+    \textbf{Principio de casillas generalizado.} Sean $k$ y $n$ dos enteros positivos.  Si al menos $kn+1$ objetos son distribuidos en $n$ casillas, entonces una de las casillas debe contener al menos $k+1$ objetos.  En particular, si al menos $n+1$ objetos son distribuidos en $n$ casillas, entonces una de las casillas tiene al menos dos objetos.
+\end{teorema}
+
+\begin{ejemplo}
+    A un partido de futbol acuden 740 personas. Demostrar que, por lo menos, hay tres que cumplen años el mismo día.
+\end{ejemplo}
+
+\begin{solucion}
+    Aplicando el principio del palomar se tiene:
+    palomas (espectadores) = 740,
+    nidos (días del año) = 365.
+    El principio del palomar nos dice que escribiendo en cada día de un calendario el nombre de un espectador, colocamos los 365 primeros espectadores, acabamos el año y escribimos luego el nombre de los 365 espectadores siguientes, y aún nos quedan 10 espectadores, ya que $740=2 \times 365+10$, luego como mínimo habrá un nido con más de tres palomas (tres personas anotadas en el mismo día).
+\end{solucion}
+
+\begin{ejemplo}
+    Un costal esta lleno de canicas de 20 colores distintos. Al azar, se van sacando canicas del costal. ¿Cuál es el mínimo número de canicas que deben sacarse para garantizar que en la colección tomada habrá al menos 100 canicas del mismo color?
+\end{ejemplo}
+
+\begin{solucion}
+    Primero notemos que, si sacamos 20 canicas, podría ser que todas fueran de colores distintos, así que podemos garantizar que hay dos canicas del mismo color al sacar 21 canicas (aquí aplicamos el principio de casillas). De igual forma, necesitaremos $(20 \times 2 + 1) = 41$ canicas para garantizar que hay al menos 3 del mismo color, pues con 40 canicas puede ocurrir que cada color apareciera exactamente 2 veces. Por lo que se necesitan $20 \times 99 + 1 = 1981$ canicas para que al menos se tengan 100 del mismo color.
+\end{solucion}
+
+\begin{ejemplo}
+    Suponiendo que se tienen 27 números impares positivos menores que 100, demostrar que hay al menos dos de ellos cuya suma es 102.
+\end{ejemplo}
+
+\begin{solucion}
+    Tomaremos los 27 números como nuestros objetos y crearemos 26 casillas donde contengan a todos los impares menores a 100 con la propiedad que si dos números están en la misma casilla entonces su suma es 102. Sabiendo esto podemos pensar que el número 3 debe estar en la misma casilla con el número 99 y así mismo el 5 con el 97, el 7 con el 95, etc.
+    
+    Como no hay ningún número que al sumarlo con el 1 nos de 102, nos conviene dejarlo en una sola casilla. De esta manera, será imposible que dos números distintos queden en esa casilla. Hacemos lo mismo con el número 51.
+
+    Así, nuestras casillas pueden ser:
+
+    \begin{center}
+        \begin{tabular}{|c|c|c|c|c|c|c|}
+            \hline
+            1 & 3  & 5  & \dots & 47 & 49 & 51 \\
+              & 99 & 97 & \dots & 55 & 53 &    \\ \hline
+        \end{tabular}
+    \end{center}
+
+    De esta manera, se ha dividido el conjunto exactamente en 26 casillas distintas, y como en el problema original se tienen 27 números impares positivos menores que 100, el Principio de Palomar nos asegura que dos de ellos caerán en el mismo casillero.  Y por la manera en la que se han construído las casillas, la suma de ambos números será 102.
+
+    Al ver la resolución del problema anterior podría surgir una duda: ¿Es 27 la cantidad mínima de números impares que se debe tomar para asegurarse de que haya un par que sume 102? ¿Si se toma solo 26 se puede asegurar que hay un par que suma 102?
+    
+    La respuesta a la última pregunta es negativa, de hecho, los casilleros que se construyeron facilitan la respuesta: basta tomar un número de cada uno de los casilleros (que son 26) y se obtendría un conjunto de 26 números de los cuales ningún par de ellos suma 102.
+    
+\end{solucion}
+
+\begin{ejemplo}
+    Sea un cuadrado de diagonal 3 en el que se marcan al azar 10 puntos. Demostrar que siempre se pueden encontrar al menos 2 puntos que estén a una distancia no mayor a 1.
+\end{ejemplo}
+
+\begin{solucion}
+    Se sabe que se van a marcar 10 puntos al interior del cuadrado; luego, si se crean 9 ''casilleros'' que cubran completamente el cuadrado de modo que cada punto deba forzosamente entrar en alguno de los casilleros, el principio del palomar asegurará que al menos 2 puntos caerían en el mismo casillero. Luego, para resolver el problema, bastaría encontrar una forma de crear 9 casilleros con la gracia que si dos puntos caen en el mismo casillero entonces la distancia entre ambos sea menor o igual que 1.
+    
+    \newpage
+    
+    Una forma de lograr esto es dividir el cuadrado en 9 cuadrados más pequeños de la siguiente manera:
+
+    \begin{center}
+        \begin{tabular}{|p{0.35cm}|p{0.35cm}|p{0.35cm}|}
+        \hline
+         &  &  \\ \hline
+         &  &  \\ \hline
+         &  &  \\ \hline
+        \end{tabular}
+    \end{center}
+
+    Y suponiendo que los bordes de los cuadrados se asignan arbitrariamente a alguno de los cuadrados que bordea (por ejemplo, se puede decir que las líneas horizontales pertenecen al cuadrado inmediatamente superior, las verticales pertenecen al cuadrado inmediatamente a la izquierda y los vértices al cuadrado inmediatamente arriba y a la izquierda). De esta manera, cualquier punto que se coloque en el cuadrado grande pertenecerá a uno y solo uno de los cuadrados pequeños. Además, como el cuadrado grande tiene diagonal 3, los cuadrados pequeños tendrán diagonal 1.
+
+    Luego, la distancia máxima que puede haber entre dos puntos dentro de un mismo cuadrado pequeño será de 1 (la diagonal del cuadrado pequeño). Así, el Principio del Palomar asegura que, al marcar 10 puntos, dos de ellos deberán quedar en el mismo cuadrado pequeño y, por lo tanto, la distancia entre dichos dos puntos será menor o igual que 1.
+\end{solucion}
+
+\begin{ejemplo}
+    Probar que si $n$ es un número natural, para cualesquiera $n+1$ números naturales hay dos de ellos cuya diferencia es múltiplo de $n$.
+\end{ejemplo}
+
+\begin{solucion}
+    Por el principio de casillas, al menos hay dos de los $n+1$ números que dan el mismo resto al dividirlos por $n$.  Por tanto, su diferencia es múltiplo de $n$.
+\end{solucion}
+
+\begin{ejemplo}
+    De cinco puntos dentro o sobre los lados de un triángulo equilátero de lado 2, hay dos cuya distancia entre ellos es menor o igual a 1.
+\end{ejemplo}
+
+\begin{solucion}
+    Para resolverlo, necesitamos definir las casillas.  Las casillas las obtenemos dibujando los cuatro triángulos que resultan al trazar segmentos que unen los puntos medios de los lados del triángulo. Observemos que se forman 4 triángulos equiláteros de lado 1, estos triángulos serían las casillas y, por lo tanto, hay dos puntos dentrode un mismo triángulo de lado uno y, por lo tanto, la distancia entre estos puntos es a lo más 1.
+\end{solucion}
+
+\begin{ejemplo}
+    Demuestre que una recta no puede cortar internamente a los tres lados de un triángulo simultáneamente.
+\end{ejemplo}
+
+\begin{solucion}
+    En este caso hay que crear tanto las cajas como los objetos; digamos que se traza la recta $L$, la cual genera dos semiplanos, estos serán las cajas. Por otra parte, los vértices del triángulo serán los objetos, que son tres en total.  Por el principio de casillas, hay un semiplano que tiene al menos dos vértices, por lo tanto, la recta $L$ no corta al lado definido por esos vértices.
+\end{solucion}
+
+\begin{ejemplo}
+    Consideremos un conjunto arbitrario de 47 números, entonces existen al menos dos cuya diferencia es divisible por 46.
+\end{ejemplo}
+
+\begin{solucion}
+    Hay que saber que los 47 números son arbitrarios y la condición se debe cumplir para cualesquiera que sean los números. También se sabe que cuando dividimos un número $d$ cualquiera entre otro, en este caso nos interesa dividir por 46, entonces obtenemos el divisor y el resto.  Entonces por el algoritmo de la división este número se puede escribir como: $d=46(c)+r$ donde $r$ es el residuo de la división y este debe ser menor que 46, por lo que hay de 0 a 45 posibles residuos.  Estos residuos serán nuestros nidos. Para aplicar el principio del palomar, vamos a distribuir nuestras palomas (que serán los 47 números arbitrarios que se han tomado) en los siguientes 46 palomares.
+
+    Sean los $A_i$ con $i=1,2,...,46$ los nidos: \\ \\
+    $A_1 =$ números tales que al dividir por 46 den resto 0. \\
+    $A_2 =$ números tales que al dividir por 46 den resto 1. \\
+    $A_3 =$ números tales que al dividir por 46 den resto 2. \\
+    \phantom{.} \vdots \\
+    $A_{46} =$ números tales que al dividir por 46 den resto 45.
+
+    En consecuencia, habrá por lo menos dos palomas, es decir, dos n\'umeros del conjunto de 47 que habíamos elegido arbitrariamente, compartiendo palomar, es decir, que tienen el mismo resto al dividir por 46. Esos dos números se podrán escribir, como antes hemos hecho con el número $d$, de la forma, $d=46(c)+r$, con distintos divisores, pero el mismo resto. Al restar ambos números, como los dos tienen el mismo resto, en el resultado quedará múltiplo de 46, y se concluye el resultado.
+\end{solucion}
+
+\subsection{Ejercicios}
+
+\begin{problema}
+    En una caja hay 10 bolas rojas, 15 bolas verdes y 20 bolas negras.
+
+    \renewcommand{\labelenumi}{\alph{enumi})}
+    \begin{enumerate}
+        \item ¿Cuántas bolas se debe extraer para estar seguros de que al menos hay dos bolas del mismo color?
+        \item ¿Cuántas bolas se deben extraer para estar seguros de que al menos hay 2 bolas verdes?
+        \item ¿Cuántas extracciones se debe realizar para tener la plena certeza de que al menos hay uno de cada color?
+        \item ¿Cuántas extracciones se debe realizar para estar seguros de que al menos hay dos bolas decolores diferentes?
+    \end{enumerate}
+\end{problema}
+
+\begin{problema}
+    ¿Cuántas personas se necesitan como mínimo para estar seguros de que hay al menos dos que cumplen años el mismo día de la semana? ¿y para que hayan al menos 3? ¿y para que hayan al menos $n$?
+\end{problema}
+
+\begin{problema}
+    En un cajón hay calcetines negros, rojos, azules y blancos. ¿Cuál es el menor número de calcetines que hay que sacar para estar seguros de que hay al menos dos del mismo color?
+\end{problema}
+
+\begin{problema}
+    ¿Cuántas veces como mínimo debe lanzarse un par de dados para asegurarse que el puntaje obtenido (la suma de los dados) se repita?
+\end{problema}
+
+\begin{problema}
+    En una caja hay 10 libros en francés, 20 en castellano, 8 en alemán, 15 en ruso y 25 en italiano. ¿Cuántos debo sacar para estar seguro de que tengo 12 en un mismo idioma?
+\end{problema}
+
+\begin{problema}
+    A un estadio de fútbol han asistido 37000 espectadores. ¿Cuántos de ellos, como máximo, puede asegurarse que cumplen años el mismo día del año?
+\end{problema}
+
+\begin{problema}
+    Una prueba de concurso posee diez preguntas de selección múltiple, con cinco alternativas cada una. ¿De cuántas maneras diferentes se puede responder el examen? ¿Cuál es el número mńimo de candidatos que deberán hacer el examen para garantizar que por lo menos dos de ellos tendrán las mismas respuestas para todas las preguntas?
+\end{problema}
+
+\begin{problema}
+    Un examen de admisión a la universidad tiene 100 preguntas de opción múltiple con 4 respuestas alternativas para cada pregunta. Si los alumnos(as) responden todas las preguntas sin excepción ¿Cuántos alumnos(as) se necesitan para garantizar que hay 15 de ellos con las mismas respuestas en todo el examen?
+\end{problema}
+
+\begin{problema}
+    Un grupo de 30 alumnos(as) hicieron un examen de Combinatoria. Si se sabe que entre cualesquiera 10 de ellos, siempre hay dos que obtuvieron la misma nota, ¿cuál es el máximo de calificaciones diferentes que pudieron haber en el examen?
+\end{problema}
+
+\begin{problema}
+    En una lista de 600,000 palabras, donde cada palabra consta de 4 o menos letras minúsculas, ¿pueden ser las 600,000 palabras distintas?
+\end{problema}
+
+\begin{problema}
+    Si una persona no puede tener más de 200,000 cabellos, ¿es posible que en una ciudad de 300,000 habitantes haya dos personas con la misma cantidad de cabellos en la cabeza?
+\end{problema}
+
+\begin{problema}
+    16 equipos están jugando un torneo en el que cada equipo juega contra los 15 restantes. Probar que después de cada partido al menos dos de los equipos han jugado el mismo número de partidos.
+\end{problema}
+
+\begin{problema}
+    En una reunión hay $n$ personas. Muestre que existen dos personas que conocen exactamente al mismo número de otros participantes (admitimos que conocer es una relación simétrica, es decir que, si $a$ conoce a $b$, entonces $b$ conoce a $a$).
+\end{problema}
+
+\begin{problema}
+    Demuestre que, si del subconjunto de números naturales $1,2, \dots ,10$ extraemos seis números, con seguridad habrá dos que suman 11.
+\end{problema}
+
+\begin{problema}
+    Se tienen los números $1, 2, \dots, 2n$ escritos en una pizarra. Se tachan $n-1$ de ellos. Probar que entre los números que quedaron sin tachar en la pizarra, hay al menos dos de ellos que son consecutivos.
+\end{problema}
+
+\begin{problema}
+    Hay 100 personas sentadas en una mesa circular a distancia constante entre sí y al menos 51 de ellas son mujeres. Verificar que hay al menos 2 mujeres sentadas en posiciones diametralmente opuestas.
+\end{problema}
+
+\begin{problema}
+    Se tiene un conjunto de diez números naturales. Demostrar que hay al menos un par cuya diferencia es múltiplo de 9.
+\end{problema}

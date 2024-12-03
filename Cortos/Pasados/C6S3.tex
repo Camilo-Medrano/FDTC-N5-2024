@@ -1,0 +1,68 @@
+\documentclass[12pt]{article}
+
+%Paquetes a utilizarse
+\input{Paquetes/package2.tex}
+%\usepackage[margin=2.5cm]{geometry}
+%\usepackage{wasysym}
+%\usepackage{stmaryrd,textcomp}
+%\usepackage{pgf,tikz}
+%\usetikzlibrary{arrows}
+
+\parskip = 2mm   %%%% genera un espacio de X mm entre lo párrafos
+\parindent = 3mm
+\usepackage{multicol}
+\usepackage{iwona}
+
+\newcommand{\tema}{Separadores}
+\newcommand{\fecha}{Viernes, 16 de diciembre de 2022}
+\newcommand{\sesion}{Corto 6}
+
+\begin{document}
+%\thispagestyle{empty}
+%\newpage
+\thispagestyle{empty}
+
+\begin{figure}[h] 
+	\begin{minipage}[b]{0.26\textwidth}
+		\begin{center}
+			\includegraphics[height=3cm]{Logos/UES.png}
+			\par\end{center}
+	\end{minipage} 
+	\begin{minipage}[b]{0.46\textwidth}
+		\begin{center}
+			UNIVERSIDAD DE EL SALVADOR\\ [0.1cm]
+			PROGRAMA JÓVENES TALENTO\\ [0.1cm]
+	        FDTC 2022\\ [0.1cm]
+                NIVEL 5\\ [0.1cm]
+			COMBINATORIA 
+			\par\end{center}
+	\end{minipage} 
+	\begin{minipage}[b]{0.05\textwidth}
+		\begin{center}
+			\includegraphics[height=2cm]{Logos/LOGO PJT.png}
+			\par\end{center}
+	\end{minipage}
+\end{figure}
+
+\begin{center}
+    \begin{tabular}{p{4.5cm} p{7cm} p{4.5cm}}
+        \tema & \centering\fecha & \hfill\sesion
+    \end{tabular}
+\end{center}
+
+\begin{problema}
+Quiere repartir $7$ dulces indistinguibles a $4$ niños. Si cada niño debe recibir al menos un dulce, ¿de cuántas formas puedes hacerlo?
+\end{problema}
+
+\begin{problema}
+Armando debe elegir $4$ clases para su último semestre escolar. Debe tomar al menos $1$ clase de ciencias y al menos $1$ clase de artes. Si su escuela ofrece $4$ clases de ciencias (distintas), $3$ clases de artes (distintas) y otras $3$ clases (distintas), ¿cuántas opciones diferentes de clases tiene?
+\end{problema}
+
+\textbf{Crédito extra.} ¿ Cuántas soluciones existen para la desigualdad
+\[x_1+x_2+x_3+x_4\leq 10\]
+donde $x_1$, $x_2$, $x_3$ y $x_4$ son enteros no negativos?
+
+
+
+
+\end{document}

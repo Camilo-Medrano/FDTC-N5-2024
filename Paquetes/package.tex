@@ -1,0 +1,150 @@
+
+\usepackage[spanish, mexico]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc} 
+\usepackage{makeidx}
+\usepackage[pdftex]{graphicx} %Para incluir figuras, sin reparar en la extensión
+\usepackage{amsmath, amssymb, amsfonts, latexsym, mathrsfs}
+\usepackage{amsthm}
+\newtheorem*{definition}{Definition}
+\usepackage{cancel}
+\usepackage{pifont}
+\usepackage[pdftex, colorlinks = true, linkcolor = blue]{hyperref}
+\usepackage[left = 2cm, right = 2cm, top = 2cm, bottom = 2cm]{geometry}
+\usepackage{mdwlist}
+\usepackage{multirow}
+\usepackage{rotating}
+\usepackage{lscape}
+\usepackage{longtable}
+\usepackage{verbatim, fancyvrb}
+\usepackage{units}
+\usepackage{pgf, tikz}
+\usetikzlibrary{arrows}
+\usepackage{colortbl}
+\definecolor{magenta4}{rgb}{0.55,0,0.55}
+
+\usepackage[margin=3cm, font=footnotesize, labelfont=bf]{caption}
+\usepackage{float}
+\usepackage{subfigure}
+
+
+\setlength{\parindent}{0cm} % Sin Sangría
+
+\usepackage{paralist} % Para enumera automaticamente \begin{enumerate}[(a)]
+
+\usepackage{fancyhdr} % Inserta en el encabeza el numero del capitulo y una linea horizontal.
+\pagestyle{fancy}
+%\fancyhead[LO]{\leftmark} % En la parte izquierda del encabezado, aparecerá el nombre de capítulo
+\fancyhead[RO,LE]{\thepage} % Números de página en las esquinas de los encabezados
+%\usepackage{bbding}
+%\usepackage{epstopdf} % Convertir .eps a .pdf (si fuera necesario)
+%\DeclareGraphicsExtensions{.pdf,.png,.jpg} % busca en este orden
+
+%\usepackage[dvips]{graphicx}        % standard LaTeX graphics tool
+                             % when including figure files
+%\usepackage{multicol}        % used for the two-column index
+%\usepackage[bottom]{footmisc}% places footnotes at page bottom
+%\usepackage{type1cm}   
+%\usepackage{fancyhdr}
+%\usepackage{mathpazo}
+
+%\addto{\captionsspanish}{\def\chaptername{}}
+%\addto{\captionsspanish}{\def\thechapter{}}
+
+
+\parskip=1mm % Para separar textos
+
+%\title{}
+%\author{}
+%\date{}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Teorema}[section]{\bfseries}{\scshape}  
+\newtheorem{coro}{Corolario}[section]{\bfseries}{\itshape} 
+\newtheorem{propo}{Proposici\'on}[section]{\bfseries}{\itshape} 
+\newtheorem{lemma}{Lema}[section]{\bfseries}{\itshape}
+\newtheorem{defi}{Definici\'on}[section]{\bfseries}{\itshape} 
+
+\theoremstyle{definition}
+\newtheorem{exercise}{Ejercicio}{\bfseries}{\rmfamily}
+\newtheorem*{solution}{Soluci\'on}{\bfseries}{\rmfamily}
+\newtheorem{exam}{Ejemplo}{\bfseries}{\rmfamily}
+
+%\newtheorem*{demo}{Demostraci\'on}{\bfseries}{\rmfamily}
+\newtheorem*{remark}{Observaci\'on}{\bfseries}{\rmfamily}
+
+
+% end of proof symbol
+%\newcommand\qedsymbol{\hbox{\rlap{$\sqcap$}$\sqcup$}}
+%\newcommand\qed{\relax\ifmmode\else\unskip\quad\fi\qedsymbol}
+%\newcommand\smartqed{\renewcommand\qed{\relax\ifmmode\qedsymbol\else
+%  {\unskip\nobreak\hfil\penalty50\hskip1em\null\nobreak\hfil\qedsymbol
+%  \parfillskip=\z@\finalhyphendemerits=0\endgraf}\fi}}
+
+% LO QUE YO HE DEFINIDO
+
+\newcommand{\cur}[1]{{\em #1}}
+\newcommand{\der}[2]{\dfrac{\mbox{d} #1}{\mbox{d} #2}}
+\newcommand{\partione}[2]{\partial #1 / \partial #2}
+\newcommand{\partitwo}[2]{\dfrac{\partial #1}{\partial #2}}
+\newcommand{\inteuno}[2]{\displaystyle \int \, #1 \, \mbox{d}#2}
+\newcommand{\intedos}[4]{\displaystyle \int_{#1}^{#2} \, #3 \, \mbox{d}#4}
+\newcommand{\negri}[1]{{\bf #1}}
+\newcommand{\pvinicial}[2]{(#1 _0, #2 _0)}
+\newcommand{\inter}{(t_0 - h, t_0 + h)}
+\newcommand{\maxi}{(\alpha, \omega)}
+\newcommand{\pvi}{{\rm PVI} }
+\newcommand{\e}{{e}}
+\newcommand{\Dconj}{\mathscr{D}}
+\newcommand{\nbr}{\mathcal{R}_0}
+\newcommand{\clas}{\mathscr{C}}
+\newcommand{\enf}[1]{\guillemotleft #1\guillemotright}
+\newcommand{\prom}{\bar{x}}
+\newcommand{\com}[1]{$-$ #1 $-$}
+\newcommand{\matmod}[1]{\begin{align}  #1  \end{align}}
+\newcommand{\solpa}{x(t; t_0, x_0)}
+\newcommand{\solu}{\varphi(t; t_0, x_0)}
+\newcommand{\bart}{\bar{t}}
+\newcommand{\solua}{\varphi(\bart; \bart_0, \prom_0)}
+\newcommand{\solub}{\varphi(\bart; \bart_0, x_0)}
+\newcommand{\soluc}{\varphi(t; \bart_0, \prom_0)}
+
+
+
+
+% Algunos símbolos matemáticos
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+
+
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+%\renewcommand{\baselinestretch}{1.2}
+
+%\renewcommand{\refname}{BIBLIOGRAF\'IA}
+
+% TERMINAN MIS DEFINICIONES
+
+
+% dedication environment
+%\newenvironment{dedication}
+%{\clearemptydoublepage
+%\thispagestyle{empty}
+%\vspace*{13\baselineskip}
+%\large\itshape
+%\let\\\@centercr\@rightskip\@flushglue \rightskip\@rightskip
+%\leftskip4cm\parindent\z@\relax
+%\everypar{\parindent=\svparindent\let\everypar\empty}}{\clearpage}
+%
+% predefined unnumbered headings
+\newcommand{\preface}[1][\prefacename]{\chapter*{#1}\markboth{#1}{#1}}
+\newcommand{\foreword}[1][\forewordname]{\chapter*{#1}\markboth{#1}{#1}}
+
+\newtheorem{obs}{Observación}
+
+
+
+
+

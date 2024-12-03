@@ -1,0 +1,77 @@
+\documentclass[12pt]{article}
+
+%Paquetes a utilizarse
+\input{Paquetes/package2.tex}
+%\usepackage[margin=2.5cm]{geometry}
+%\usepackage{wasysym}
+%\usepackage{stmaryrd,textcomp}
+%\usepackage{pgf,tikz}
+%\usetikzlibrary{arrows}
+
+\parskip = 2mm   %%%% genera un espacio de X mm entre lo párrafos
+\parindent = 3mm
+\usepackage{multicol}
+\usepackage{iwona}
+
+\newcommand{\tema}{Teorema del binomio}
+\newcommand{\fecha}{Jueves, 8 de diciembre de 2022}
+\newcommand{\sesion}{Tarea 4}
+
+\begin{document}
+%\thispagestyle{empty}
+%\newpage
+\thispagestyle{empty}
+
+\begin{figure}[h] 
+	\begin{minipage}[b]{0.26\textwidth}
+		\begin{center}
+			\includegraphics[height=3cm]{Logos/UES.png}
+			\par\end{center}
+	\end{minipage} 
+	\begin{minipage}[b]{0.46\textwidth}
+		\begin{center}
+			UNIVERSIDAD DE EL SALVADOR\\ [0.1cm]
+			PROGRAMA JÓVENES TALENTO\\ [0.1cm]
+	        FDTC 2022\\ [0.1cm]
+                NIVEL 5\\ [0.1cm]
+			COMBINATORIA 
+			\par\end{center}
+	\end{minipage} 
+	\begin{minipage}[b]{0.05\textwidth}
+		\begin{center}
+			\includegraphics[height=2cm]{Logos/LOGO PJT.png}
+			\par\end{center}
+	\end{minipage}
+\end{figure}
+
+\begin{center}
+    \begin{tabular}{p{4.5cm} p{7cm} p{4.5cm}}
+        \tema & \centering\fecha & \hfill\sesion
+    \end{tabular}
+\end{center}
+
+\begin{problema}
+    Demuestre algebraicamente la siguiente identidad
+
+    \begin{center}
+        $k^2 = 2 C^{2}_{k} + C^{1}_{k}$
+    \end{center}
+
+    y, a partir de ella, demuestre que 
+
+    \begin{center}
+        $1^2 + 2^2 + 3^2 + ... + n^2 = \frac{1}{3} n (n+\frac{1}{2})(n+1)$
+    \end{center}
+\end{problema}
+
+\begin{problema}
+    Demuestre la siguiente identidad utilizando el teorema del binomio:
+
+    \begin{center}
+        $\sum_{k=0}^{n} (-1)^k \binom{n}{k} 5^{n-k} = 2^{2n}$
+    \end{center}
+\end{problema}
+
+\textbf{Crédito extra:} Encuentre el coeficiente del termino  $a^7 b^4 c e^2$ en el desarrollo de $(a+b+c+d+e)^{14}$.
+
+\end{document}

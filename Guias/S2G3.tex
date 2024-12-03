@@ -1,0 +1,115 @@
+\section{Desórdenes}
+
+\subsection{Definición}
+
+Consideremos los naturales 1,2,3,4 en la permutación 3142, ningún elemento está en su posición natural. A una permutación con tal propiedad la denominaremos como un \textbf{desorden} o un \textbf{desarreglo}. 
+
+\begin{problema}
+    ¿De los 24 posibles ordenamientos de tales números, cuántos desórdenes existen?
+\end{problema}
+
+\begin{solucion}
+    Denotemos por $D_4$ tal número de desórdenes; por $F_1$, al número de las permutaciones que dejan fijo un elemento en su posición natural; por $F_2$, a las que dejan dos elementos en su posición natural; por $F_3$, a las que dejan tres elemento en su puesto; y por $F_4$, a las que dejan a los 4 elementos en su posición. Así, por el principio de inclusión-exclusión, tenemos el siguiente resultado:
+
+    \begin{center}
+        $D_4= 4!-F_1+F_2-F_3+F_4$
+    \end{center}
+
+    Ahora bien, $F_1$ se descompone en los que dejan fijo el 1 en su posición, que son 6; los que dejan fijo el 2, que son otras 6; los 6 que dejan el 3; y los 6 que dejan fijo el 4; así, $F_1$ es 24. De las que dejan fijos a dos de los cuatro elementos, están los que dejan fijos el 1 y 2, el 1 y 3, el 1 y 4; los que dejan fijos el 2 y 3, el 2 y 4; y los que dejan fijos el 3 y el 4. Como en cada uno de estos casos, que son seis, el número de permutaciones es 2, resulta que $F_2$ es 12. El caso de que dejen fijos tres elementos contiene los casos  que dejen fijos el 1,2,3; el 1,2,4; el 1,3,4; y el 2,3,4; en total son cuatro casos y cada uno de ellos tiene 1 permutación por lo que $F_3$ es igual a 4. Finalmente, $F_4$ contiene una única permutación, es decir $F_4$ es 1. En resumen tenemos:
+
+    \begin{center}
+        $D_4= 24 - 24 + 12 - 4 + 1 = 9$
+    \end{center}
+
+    Hay en consecuencia 9 desórdenes en las permutaciones de orden 4.
+\end{solucion}
+
+Esta claro que esta relación se puede generalizar.
+
+\subsection{Generalización}
+
+\begin{teorema}
+    \textbf{Desórdenes.} En general, se tiene que el total de desórdenes de orden $n$, denotado por $D_n$, es:
+
+    \begin{center}
+        $D_n = \displaystyle\sum_{k=0}^{n} (-1)^{k} \binom{n}{k} (n-k)!$
+    \end{center}
+\end{teorema}
+
+\begin{demostracion}
+    El total de permutaciones es $P_n = n!$ Tomando la misma notación del ejemplo anterior, $F_k$ denota aquellas permutaciones que tienen a $k$ (al menos) de sus elementos en la posición que les corresponde; así, el total de permutaciones de $F_k$ lo contamos primero escogiendo los $k$ que quedarán en la posición que les corresponde, lo cuál se puede hacer de $C^k_n$ formas, y luego permutando los restantes $n-k$ objetos, lo que se puede hacer de $P_{n-k}= (n-k)!$ formas; y, por el principio de la multiplicación, $F_k = C^k_n (n-k)!$ Luego, por el principio de inclusión-exclusión:
+
+    \begin{align*}
+        D_n & = n!-F_1+F_2-F_3+ ... + (-1)^k F_k + ... + (-1)^n F_n \\
+        & = (-1)^0 C^0_n (n-0)! + (-1)^1 C^1_n (n-1)! + (-1)^2 C^2_n (n-2)! + ... + (-1)^n C^n_n (n-n)! \\
+        & = \displaystyle\sum_{k=0}^{n} (-1)^{k} \binom{n}{k} (n-k)!
+    \end{align*}
+\end{demostracion}
+
+Observe que esa expresión se puede manipular algebraicamente y reescribirse como
+
+\begin{center}
+    $D_n = n! \displaystyle\sum_{k=0}^{n} \frac{(-1)^{k}}{k!}$
+\end{center}
+
+\subsection{Ejercicios}
+
+\begin{ejercicio}
+    Calcular $D_3$ y $D_5$.
+\end{ejercicio}
+
+\begin{ejercicio}
+    Hallar el número de permutaciones de los enteros del 1 al 10 inclusive tal que ningún número esta en su lugar habitual y si en los primeros cinco lugares están
+
+    \renewcommand{\labelenumi}{\alph{enumi})}
+    \begin{enumerate}
+        \item 1,2,3,4,5; en algún orden.
+        \item 6,7,8,9,10; en algún orden.
+    \end{enumerate}
+\end{ejercicio}
+
+\begin{ejercicio}
+    Hallar el número de permutaciones de 1, 2, 3, 4, 5, 6, 7 que no tenga a 1 en el primer lugar, a 4 en el cuarto ni a 7 en el séptimo lugar.
+\end{ejercicio}
+
+\begin{ejercicio}
+    ¿Cuántas permutaciones de los enteros del 1 al 9 inclusive tienen exactamente tres de sus números en sus posiciones naturales y los otros seis no?
+\end{ejercicio}
+
+\begin{ejercicio}
+    Se tiene un tablero de 4 × 4 y cuatro colores diferentes. Se pinta cada cuadrito de la primera fila de un color diferente de tal manera que cuando se pinta la segunda fila cada cuadrito es de diferente color al cuadrito de la parte superior. De forma análoga, se colorean las demás filas. ¿De cuántas maneras se puede colorear el tablero?
+\end{ejercicio}
+
+\begin{ejercicio}
+    En cada uno de los vértices de un cubo hay una mosca. Al sonar un silbato, cada una de las moscas vuela a alguno de los vértices del cubo situado en una misma cara que el vértice dedonde partió, pero diagonalmente opuesto a éste. Al sonar el silbato, ¿de cuántas maneras pueden volar las moscas de modo que en ningún vértice queden dos o más moscas.
+\end{ejercicio}
+
+\begin{ejercicio}
+    En un campamento se reparten $n$ juguetes diferentes entre $n$ niños. Al día siguiente sevuelven a repartir los mismos juguetes entre los mismos $n$ niños. ¿De cuántas maneras sepueden repartir los juguetes, los dos dias, si ningún niño debe recibir el mismo juguete los dos días?
+\end{ejercicio}
+
+\begin{ejercicio}
+    $n$ parejas de casados se han reunido para bailar. Si cada caballero tiene la misma probabilidad de bailar con cualquier dama, ¿cuál es la probabilidad de que ningún caballero baile con su propia mujer?
+\end{ejercicio}
+
+\begin{ejercicio}
+    ¿Cuántas formas hay de que, entre 10 clientes, ninguno reciba su propio sombrero si el empleado de guardaropa devuelve los sombreros al azar?
+\end{ejercicio}
+
+\begin{ejercicio}
+    Supongamos que tenemos que asignar asientos a un grupo de $n$ estudiantes para dos clases distintas en la misma aula. ¿De cuántas formas se puede hacer si no queremos que ningún estudiante esté sentado en el mismo sitio en las dos clases?
+\end{ejercicio}
+
+\begin{ejercicio}
+    Se tienen 5 sobres y 5 cartas y se distribuyen al azar las cartas en los sobres (solo una carta le corresponde a cada sobre).
+
+    \renewcommand{\labelenumi}{\alph{enumi})}
+    \begin{enumerate}
+        \item ¿De cuántas formas se pueden distribuir para que no haya coincidencia?
+        \item ¿De cuántas formas para que haya una coincidencia?
+        \item ¿Y para que haya exactamente dos coincidencias?
+        \item ¿De cuántas formas para que haya tres coincidencias?
+        \item ¿De cuántas formas para que haya cuatro coincidencias?
+        \item ¿De cuántas formas para que haya cinco coincidencias?
+    \end{enumerate}
+\end{ejercicio}

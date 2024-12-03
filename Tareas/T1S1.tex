@@ -1,0 +1,83 @@
+\documentclass[12pt]{article}
+
+%Paquetes a utilizarse
+\input{Paquetes/package2.tex}
+%\usepackage[margin=2.5cm]{geometry}
+%\usepackage{wasysym}
+%\usepackage{stmaryrd,textcomp}
+%\usepackage{pgf,tikz}
+%\usetikzlibrary{arrows}
+
+\parskip = 2mm   %%%% genera un espacio de X mm entre lo párrafos
+\parindent = 3mm
+\usepackage{multicol}
+\usepackage{iwona}
+
+\newcommand{\tema}{Introducción}
+\newcommand{\fecha}{Martes, 29 de noviembre de 2022}
+\newcommand{\sesion}{Tarea 1}
+
+\begin{document}
+%\thispagestyle{empty}
+%\newpage
+\thispagestyle{empty}
+
+\begin{figure}[h] 
+	\begin{minipage}[b]{0.26\textwidth}
+		\begin{center}
+			\includegraphics[height=3cm]{Logos/UES.png}
+			\par\end{center}
+	\end{minipage} 
+	\begin{minipage}[b]{0.46\textwidth}
+		\begin{center}
+			UNIVERSIDAD DE EL SALVADOR\\ [0.1cm]
+			PROGRAMA JÓVENES TALENTO\\ [0.1cm]
+	        FDTC 2022\\ [0.1cm]
+                NIVEL 5\\ [0.1cm]
+			COMBINATORIA 
+			\par\end{center}
+	\end{minipage} 
+	\begin{minipage}[b]{0.05\textwidth}
+		\begin{center}
+			\includegraphics[height=2cm]{Logos/LOGO PJT.png}
+			\par\end{center}
+	\end{minipage}
+\end{figure}
+
+\begin{center}
+    \begin{tabular}{p{4.5cm} p{7cm} p{4.5cm}}
+        \tema & \centering\fecha & \hfill\sesion
+    \end{tabular}
+\end{center}
+
+\begin{problema}
+    Manuel tiene cuatro carritos de juguete de diferentes colores (azul, blanco, verde y rojo, uno de cada color) y decide regalárselos a sus hermanos Luis y Karen. ¿De cuántas maneras diferentes puede hacer esto? Ejemplo: podría dar los cuatro carritos a Luis. También podría dar tres de ellos a Karen y el otro a Luis.
+\end{problema}
+
+\begin{problema}
+    Se tienen los conjuntos $P=\{ x \ | \ x \ es \ una \ letra \ de \ la \ palabra \ ''guadalajara''\}$ y $Q=\{ x \ | \ x \ es \ una \ letra \ de \ la \ palabra \ ''carcajada''\}$, determine:
+
+    \renewcommand{\labelenumi}{\alph{enumi})}
+    \begin{multicols}{2}
+    \begin{enumerate}
+        \item $|P|$
+        \item $P \cap Q$
+        \item $|P \cup Q|$
+        \item $P-Q$
+        \item $Q-P$
+    \end{enumerate}
+    \end{multicols}
+\end{problema}
+
+\textbf{Crédito extra:} a un grupo de estudiantes, se le preguntó por sus colores favoritos. La información recabada fue la siguiente: a 33 les gusta el azul, a 32 les gusta el rojo, a 28 les gusta el amarillo, a 11 les gusta el azul y el rojo, a 15 les gusta el azul y el amarillo, a 14 les gusta el rojo y el amarillo, a 5 les gustan los tres, y a 7 no les gusta ninguno. Determine:
+
+    \renewcommand{\labelenumi}{\alph{enumi})}
+    \begin{enumerate}
+        \item ¿A cuántos estudiantes les gusta únicamente el amarillo?
+        \item ¿A cuántos estudiantes les gustan exactamente dos colores?
+        \item ¿Cuál es el número total de estudiantes?
+    \end{enumerate}
+
+\textbf{Recomendación:} apoyarse de un diagrama de Venn.
+
+\end{document}

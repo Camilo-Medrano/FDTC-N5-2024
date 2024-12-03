@@ -1,0 +1,211 @@
+\documentclass[12pt]{article}
+
+
+
+%Paquetes a utilizarse
+\input{Paquetes/package2.tex}
+%\usepackage[margin=2.5cm]{geometry}
+%\usepackage{wasysym}
+%\usepackage{stmaryrd,textcomp}
+%\usepackage{pgf,tikz}
+%\usetikzlibrary{arrows}
+
+\parskip = 2mm   %%%% genera un espacio de X mm entre lo párrafos
+\parindent = 3mm
+\usepackage{multicol}
+\usepackage{iwona}
+
+\newcommand{\tema}{Comparaciones}
+\newcommand{\fecha}{Viernes, 9 de diciembre de 2022}
+\newcommand{\sesion}{Sesión 6}
+
+\begin{document}
+%\thispagestyle{empty}
+%\newpage
+\thispagestyle{empty}
+
+\begin{figure}[h] 
+	\begin{minipage}[b]{0.26\textwidth}
+		\begin{center}
+			\includegraphics[height=3cm]{Logos/UES.png}
+			\par\end{center}
+	\end{minipage} 
+	\begin{minipage}[b]{0.46\textwidth}
+		\begin{center}
+			UNIVERSIDAD DE EL SALVADOR\\ [0.1cm]
+			PROGRAMA JÓVENES TALENTO\\ [0.1cm]
+	        FDTC 2022\\ [0.1cm]
+                NIVEL 5\\ [0.1cm]
+			COMBINATORIA 
+			\par\end{center}
+	\end{minipage} 
+	\begin{minipage}[b]{0.05\textwidth}
+		\begin{center}
+			\includegraphics[height=2cm]{Logos/LOGO PJT.png}
+			\par\end{center}
+	\end{minipage}
+\end{figure}
+
+\begin{center}
+    \begin{tabular}{p{4.5cm} p{7cm} p{4.5cm}}
+        \tema & \centering\fecha & \hfill\sesion
+    \end{tabular}
+\end{center}
+\section{Generalidades}
+El \textbf{doble conteo} es un método de demostración de identidades combinatorias, que consiste en contar los elementos de un conjunto de dos formas, obteniendo así dos expresiones diferentes para el número de elementos del conjunto, además, es una de las principales herramientas para abordar problemas de combinatoria que aparecen en
+olimpiadas de matemática.\\\\
+Todas las demostraciones por doble conteo se basan en el siguiente principio.
+\begin{definicion}[Principio de doble conteo]
+Si contamos la cantidad de objetos de cierto conjunto de una forma y resulta $a$ y luego las contamos de otra forma y resulta $b$, entonces $a = b$.
+\end{definicion}
+\section{Ejemplos varios}
+\begin{ejemplo}
+Demostrar por conjuntos la igualdad
+\[C^k_n=C^{k-1}_{n-1}+C^k_{n-1}\;\;.
+\]
+\end{ejemplo}
+\begin{solucion}
+Estudiemos el lado izquierdo de la ecuación. Tenemos que $\displaystyle C^k_n$ representa el número de formas de elegir $k$ elementos de un conjunto de $n$ elementos. Por otro lado, se puede contar incluyendo el primer elemento o no. Si incluimos el primer elemento, necesitamos elegir $k-1$ elementos de los restantes $n-1$, y sabemos que hay $\displaystyle C_{n-1}^{k-1}$ formas de hacerlo. Sino incluimos el primer elemento, necesitamos elegir $k$ elementos de los $n-1$ restantes objetos y entonces, tenemos $\displaystyle C^{k}_{n-1}$ formas de hacerlo. Por último, por el principio de la suma tenemos que hay $\displaystyle C^{k-1}_{n-1}+C^k_{n-1}$ formas de hacer la elección. Con todo este bagaje de ideas la igualdad está demostrada.
+\end{solucion}
+\begin{ejemplo}
+    Para cada par de enteros $n$, $k$ con $0\leq k\leq n$ se tiene que
+    \[C^k_n=C^{n-k}_n\]
+\end{ejemplo}
+\begin{solucion}
+Del lado izquierdo de la ecuación tenemos que $\displaystyle C^k_n$ representa el número de cadenas de longitud $n$ de $k$ unos y $n-k$ ceros, usando el enfoque el cadenas binarias. Por otro lado, $\displaystyle C^{n-k}_n$ nos representa las cadenas de longitud $n$ de $n-k$ unos y de $n-(n-k)$ ceros, que equivale a $k$. Y de esta manera, tenemos que $\displaystyle C^k_n=C^{n-k}_n$.
+\end{solucion}
+
+\begin{ejemplo}
+   Demostar la igualdad
+   \[C^k_n=C^0_2C^k_{n-2}+2C^1_2C^{k-1}_{n-2}+C^2_2C^{k-2}_{n-2}\]
+\end{ejemplo}
+\begin{solucion}
+Usemos el modelo de conjuntos. Del lado izquierdo de la ecuación
+tenemos $\displaystyle C^k_n$ que nos representa el número de formas de elegir $k$ elementos de un conjunto de $n$ elementos. Ahora tomemos $2$ elementos a los cuales llamaremos $x$ e $y$. Consideremos los siguientes casos:
+\begin{itemize}
+    \item Si $x$ e $y$ forman parte de la colección de $k$ elementos entonces el número de formas para escogerlos es $C^2_2$. Ahora como ya elegimos $2$ elementos, entonces resta elegir $k-2$ elementos de un conjunto $n-2$ elementos y eso viene dado por $\displaystyle C^{k-2}_{n-2}$. Así el número de formas de hacer este caso, usando el principio de la multiplicación, es $C^2_2 \cdot C^{k-2}_{n-2}$
+    \item Si $x$ o $y$ forman parte de la colección de $k$ elementos entonces el número de formas para elegir un elemento es $\displaystyle C^1_2$. Ahora como ya elegimos un elemento, queda elegir $k-1$ elementos del conjunto de $n-2$ elementos, lo cual viene dado por $\displaystyle C^{k-1}_{n-2}$. Por el principio de la multiplicación, tenemos que el número de formas de hacer esto es, $C^1_2\cdot C^{k-1}_{n-2}$.
+    \item  Finalmente si $x$ ni $y$ forman parte de la colección de $k$ elementos entonces el número de formas de elegirlos es $C^0_2$. Ahora elegimos $k$ elementos del conjunto de $n-2$ elementos, y, el número de formas de hacer esto es $C^k_{n-2}$. Y así, por el principio de la multiplicación, el número de formas de escoger en este caso es $C^0_2\cdot C^k_{n-2}$.
+\end{itemize}
+Y por lo tanto, por el principio de la suma, tenemos:
+\[C^0_2C^k_{n-2}+2C^1_2C^{k-1}_{n-2}+C^2_2C^{k-2}_{n-2}\;.\]
+Y así, la igualdad está demostrada.
+\end{solucion}
+\begin{ejemplo}
+Si $0\leq s\leq r \leq n$, donde $n$, $s$ y $r$ son números enteros. Entonces se cumple que:
+\[C^r_nC^s_r=C^r_nC^{r-s}_{n-s}\;.\]
+\end{ejemplo}
+\begin{solucion}
+ Consideremos un grupo de $n$ personas. Esta vez, contamos el
+número de formas de seleccionar un equipo de $r$ miembros, entre
+los cuales $s$ son designados como capitanes. Una forma de hacerlo es comenzar seleccionando el equipo, lo que se puede hacer de $\displaystyle C^r_n$ formas. Para cada equipo, luego seleccionamos los capitanes, lo que se puede hacer de $\displaystyle C^s_r$ formas, y por el principio de la multiplicación, el total de formas es $\displaystyle C^r_n\cdot C^s_r$.\\\\
+Otra forma de contar es comenzar seleccionando a los capitanes
+primero. Luego, debemos seleccionar al resto del equipo. Por lo que se restan $n-s$ personas y debemos de seleccionar $r-s$ para completar el equipo, lo cual viene dado por $\displaystyle C^{r-s}_{n-s}$. Luego el total de maneras de seleccionar un equipo con $r$ miembros es $\displaystyle C^r_n$ Y, nuevamente, por el principio de la multiplicación, el número total de formas es $\displaystyle C^r_n \cdot C^{r-s}_ {n-s}$. 
+\end{solucion}
+
+\begin{ejemplo}
+Demostrar la identidad
+\[C^2_{2n}=2C^2_n+n^2\;.\]
+\end{ejemplo}
+
+\begin{solucion}
+Sabemos que $\displaystyle C^2_{2n}$ nos representa el número de formas de elegir $2$ elementos de $2n$ elementos. Denotemos a ese conjunto como $A=\left\{a_1,a_2,\ldots,a_n,a_{n+1},\ldots,a_{2n}\right\}$. Particionemos el conjunto en dos subconjuntos de $n$ elementos $A_1=\{a_1,a_2,\ldots,a_n\}$ y $A_2=\{a_{n+1},a_{n+2},\ldots,a_{2n}\}$.
+Ahora debemos de elegir $2$ elementos. Por lo cual tendremos los siguientes casos:
+\begin{itemize}
+    \item Si elegimos los $2$ elementos del conjunto $A_1$ sabemos que el número de formas de hacerlo es $C^2_{n}$.
+    \item También, si elegimos los $2$ elementos del conjunto $A_2$ sabemos que el número de formas de hacerlo es $C^2_{n}$.
+    \item  Ahora elegiremos un elemento del conjunto $A_1$ y un elemento del conjunto $A_2$, sabemos que el número de formas de elegir un elemento del conjunto $A_1$ es $n$ de manera similar el número de maneras de elegir un elemento del conjunto $A_2$ es $n$, ahora por el principio de la multiplicación hay $n^2$ formas de elegir los $2$ elementos. 
+\end{itemize}
+Así, por el principio de la suma, el total de formas es
+\[C^2_n+C^2_n+n^2=2C^2_n+n^2\]
+y con ello la igualdad está demostrada.
+\end{solucion}
+
+\begin{ejemplo}
+    Para cada entero positivo $n$ se tiene que
+    \[\sum_{k=1}^nkC^{k}_n=n2^{n-1}\;.\]
+\end{ejemplo}
+\begin{solucion}
+Consideremos ahora cuántos equipos con un líder se pueden hacer en un grupo con $n$ personas. Por un lado, podemos comenzar eligiendo de entre las $n$ personas al que será el líder. Luego, las $n-1$ personas restantes tienen dos opciones: \textbf{estar o no estar en el equipo}, con lo cual tenemos $2^{n-1}$ maneras de formar el equipo. Así, por el principio de la multiplicación hay $n2^{n-1}$ equipos con líder. Por otro lado,
+podemos primero elegir cu´antas personas tendr´a el equipo (digamos k).\\\\
+Hay $C^k_n$ formas de elegir a las $k$ personas y todavía hay que elegir quién de las $k$ personas es el líder.
+\begin{itemize}
+    \item Si $k=1$ entonces el número de equipos con líder  es $1\cdot C^1_n$
+    \item Si $k=2$ entonces el número de equipos con líder es $2\cdot C^2_n$
+    \item Si $k=3$ entonces el número de equipos con líder es $3\cdot C^3_n$
+    \begin{center}
+        $\vdots$
+    \end{center}
+    \item Si $k=n$ entonces el número de equipos con líder es $n\cdot C^n_n$
+\end{itemize}
+Por el principio de la suma, el total de formas es
+\[1\cdot C^1_n+2\cdot C^2_n+\cdots+n\cdot C^n_n=\sum_{k=1}^nkC^k_n\;.\]
+\end{solucion}
+
+\begin{ejemplo}
+    Justificar la siguiente igualdad
+    \[C^3_{n+3}=C^3_{n+1}+2C^2_{n+1}+C^1_{n+1}\;.\]
+\end{ejemplo}
+
+\begin{solucion}
+    Sabemos que $C^3_{n+3}$ nos cuenta la cantidad de cadenas de longitud $n+3$ que contienen $3$ unos. Del lado derecho tenemos que $C^3_{n+1}$ es la cantidad de cadenas de longitud $n+1$ que contienen $3$ unos, para hacerla de longitud $n+3$ agreguemos al final $00$. Para $C^2_{n+1}$ son las
+cadenas de longitud $n+1$ y que incluyen $2$ unos, para hacerla de longitud $n+3$ y que tenga $3$ unos agreguemos al final $01$ o $10$ de manera que hay $2C^2_{n+1}$. Finalmente $C^1_{n+1}$ son cadenas de longitud $n+1$ y que tienen un uno, para hacerla de longitud $n+3$ y con $3$ unos agregaremos al final $11$.\\\\
+Como cada caso es excluyente del resto, por el principio de la suma, tenemos el resultado:
+\[\overbrace{C^3_{n+3}}^{\text{conteo de golpe}}=\underbrace{C^3_{n+1}}_{\text{terminan en $00$}}+2\cdot \overbrace{C^2_{n+1}}^{\text{terminan en $10$ o $01$}}+\underbrace{C^1_{n+1}}\]
+\end{solucion}
+
+\begin{ejemplo}
+    DemostraR la identidad de Vandermonde
+    \[C^0_mC^r_n+C^1_mC^{r-1}_n+\cdots+C^r_mC^0_n=C^r_{m+n}\;.\]
+\end{ejemplo}
+
+\begin{solucion}
+Supongamos que tenemos un grupo de $m$ niños y $n$ niñas y queremos encontrar el número de grupos de $r$ personas que
+podemos formar, por lo cual hay $C^r_{m+n}$ formas. Ahora otra forma de contar es la siguiente, sea $k$ el número de niños en el grupo. Entonces podemos elegir los niños de $C^k_m$ maneras y los $r-k$ miembros restantes del grupo deben ser niñas, las cuales pueden ser elegidas de $C^{r-k}_n$ formas. Por lo que el número de maneras de formar el grupo es $C^k_m\cdot C^{r-k}_n$.
+\begin{itemize}
+    \item Si $k=0$ entonces el nùmero de maneras de formar el grupo es $C^0_mC^r_n$.
+    \item Si $k=1$ entonces el nùmero de maneras de formar el grupo es $C^1_mC^{r-1}_n$.
+    \begin{center}
+        $\vdots$
+    \end{center}
+    \item Si $k=r$ entonces el nùmero de maneras de formar el grupo es $C^r_mC^0_n$.
+\end{itemize}
+Así, por el principio de la suma, tenemos que el total de formas es
+\[C^0_mC^r_n+C^1_mC^{r-1}_n+\cdots +C^r_mC^0_n=\sum_{k=1}^nC^k_mC^{r-k}_n\]
+\end{solucion}
+Y la igualdad queda demostrada.
+\section{Problemas propuestos}
+\begin{problema}
+    Justificar las siguientes igualdadades usando caminos, conjuntos y cadenas binarias.
+    \begin{enumerate}
+        \item $\displaystyle C^k_n=C^k_{n-3}+3C^{k-1}_{n-3}+3C^{k-2}_{n-3}+C^{k-3}_{n-3}$.
+        \item $\displaystyle C^2_{n+3}=C^3_{n+1}+2C^2_{n+1}+C^1_{n+1}$
+    \end{enumerate}
+\end{problema}
+
+\begin{problema}
+    Demostrar por caminos la siguiente igualdad
+    \[C^n_{4n}=C^n_n+C^1_{3n}C^{n-1}_n+C^2_{3n}C^{n-2}_{n}+\cdots +C^n_{3n}C^0_n\]
+\end{problema}
+
+\begin{problema}
+Demostrar por conjuntos la identidad
+\[C^n_{3n}=3C^3_{n}+6nC^2_n+n^3\]
+\end{problema}
+
+\begin{problema}
+    Demostrar por conjuntos la identidad
+\[n(n-1)C^{k-2}_{n-2}=k(k-1)C^k_n\]
+\end{problema}
+
+\begin{problema}
+    Demostrar por diversos métodos (caminos, conjuntos y cadenas binarias) la identidad de Vandermonde
+    \[C^0_mC^r_n+C^1_mC^{r-1}_n+\cdots+C^r_mC^0_n=C^r_{m+n}\]
+\end{problema}
+
+\begin{problema}
+    Demostrar por diversos métodos (caminos, conjuntos y cadenas binarias) la identidad de Vandermonde
+    \[C^0_n+C^1_{n+1}+C^2_{n+2}+\cdots+C^r_{n+r}=C^r_{n+r+1}\]
+\end{problema}
+
+\end{document}

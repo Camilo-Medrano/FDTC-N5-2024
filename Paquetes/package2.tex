@@ -1,0 +1,74 @@
+\usepackage[width=7in, height=9.5in, top=0.75in, papersize={8.5in,11in}]{geometry}
+\usepackage[spanish]{babel} 
+\decimalpoint
+\usepackage[utf8]{inputenc}
+\usepackage{bbding}
+\usepackage[colorlinks = true, linkcolor = blue, urlcolor = BlueViolet, citecolor = OliveGreen]{hyperref}
+\usepackage{graphicx}
+\usepackage{amssymb,amsthm,amsmath}
+\usepackage{enumerate}
+\usepackage{array,multicol,multirow}
+\usepackage{xcolor}
+\usepackage{fancybox,tcolorbox}
+\usepackage{caption,subcaption,float,tabularx}
+\usepackage{enumitem}
+
+\theoremstyle{definition}
+\newtheorem{corolario}{Corolario}
+\newtheorem{lema}[corolario]{Lema}
+\newtheorem{proposicion}[corolario]{Proposición}
+\newtheorem{teorema}[corolario]{Teorema}
+\newtheorem{propiedad}[corolario]{Propiedad}
+\newtheorem*{observacion}{Observación}
+\newtheorem{definicion}{Definición}
+\newtheorem*{demostracion}{Demostración}
+\newtheorem{ejemplo}{Ejemplo}
+\newtheorem{problema}{Problema}
+\newtheorem*{solucion}{Solución}
+\newtheorem{ejercicio}{\PencilRightDown \  Ejercicio}
+\newtheorem{step}{Paso}
+\newtheorem{credito}{Crédito}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,babel,calc,positioning}
+
+\renewcommand{\arraystretch}{1.5}
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+
+\renewcommand{\tabularxcolumn}[1]{m{#1}}
+\newcommand{\Evaluacion}[4]{
+\setcounter{ejercicio}{0}
+\noindent\begin{tabular}{lcr}
+	\includegraphics[height=3cm]{Logos/logo-UES.png}\hspace{2.5em}
+	&
+	\includegraphics[height=2.75cm]{Logos/logo-PJT.png}
+	& 
+	\hspace{2.5em}\includegraphics[height=2.75cm]{Logos/logo-MINEDUCYT.png}
+\end{tabular}
+
+\hfill
+
+\begin{center}
+    
+    UNIVERSIDAD DE EL SALVADOR
+    \\PROGRAMA JÓVENES TALENTO
+    \\FDTC 2022
+    \\#2
+    \\Nivel Olímpico C de Matemáticas
+
+\end{center}
+
+\begin{center}
+    #1
+\end{center}
+
+%\textbf{Nombre}: \enspace\hrulefill
+
+#3
+
+\input{#4}
+\newpage
+}
+
+\newtheorem{obs}{Observación}

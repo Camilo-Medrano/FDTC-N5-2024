@@ -1,0 +1,200 @@
+\section{Introducción}
+Como  el  nombre  lo  dice,  separadores  se  asemeja  a  los  separadores de los libros, aunque en este caso se utilizan para separar elementos de un conjunto en problemas de conteo.
+\begin{ejemplo}
+¿Cuántas palabras de tres letras hay, tales que se puedan usar las letras $\{a,b,c,d,e\}$ y que el orden de las letras no importa?    
+\end{ejemplo}
+\begin{solucion}
+Con nuestros conocimientos actuales de combinatoria, no hay manera de resolver el problema de golpe y lo más probable es que optemos por dividir el problema en casos:
+\begin{enumerate}
+    \item Palabras con todas las letras iguales.
+    \item Palabras con dos letras iguales y una diferente.
+    \item Palabras con todas las letras diferentes.
+\end{enumerate}
+Los cuales ahora sí son semejantes a la teoría discutida y más fácil de manipularlos. Es decir, los casos son atacables debido al tamaño reducido del problema. La intención es abordar el problema haciendo cuentas más sencillas y para tener esta garantía, vamos a proponer un enfoque que a primera vista será creativo y poco intuitivo, pero que con la práctica, lo dominaremos rápidamente y será una gran herramienta más en nuestro arsenal.\\\\
+Los ya tan mencionados separadores por fin se van a utilizar y se representan con una barra vertical: $|$.
+Y bueno, ¿Dónde se colocan los separadores? y más importante todavía, ¿Qué separan? Pues se ponen junto a los guiones bajos y se utilizan para separar las letras. ¿Cuántos separadores se deben utilizar? En este caso 4. ¿Pero por qué deben ser 4? Por la manera en que, valga la redundancia, los separadores separan, la cual es como sigue:
+\begin{itemize}
+    \item A la izquierda del primer separador van las a’s.
+    \item Entre el primer y el segundo separador van las b’s
+    \item Entre el segundo y tercer separador van las c’s.
+    \item Entre el tercer y el cuarto separador van las d’s
+    \item A la derecha del cuarto separador van las e’s
+\end{itemize}
+Vamos a ilustrar lo anterior.
+\begin{itemize}
+    \item El arreglo $|bb||d|$ representa la palabra $bbd$.
+    \item El arreglo $aa||c||$ representa la palabra $aac$.
+    \item El arreglo $|b||d|e$ representa la palabra $bde$
+\end{itemize}
+¿Observan por qué se llaman separadores? Si no, con mucha imaginación, piensa que cada arreglo es un libro, cada letra es una página y los separadores son... pues los separadores.
+Bueno, para terminar con el problema, hay que notar que cada arreglo con separadores representa una palabra distinta, entonces sólo falta saber cuántos arreglos distintos se pueden dar. Dado que cada arreglo tiene $7$ espacios, $4$ para separadores y $3$ para letras, es fácil ver que en total se pueden dar $C^4_7=35$ arreglos distintos y lo que equivale a $35$ palabras diferentes.
+\end{solucion}
+\begin{observacion}
+Los  separadores  sólo  funcionan  cuando  se  tiene  unproblema en el que puedes repetir elementos de un conjunto y que el orden en el resultado no importa.  En este caso las palabras $aab$,$aba$ y $baa$ son la mismas.
+\end{observacion}
+
+\begin{ejemplo}
+Ana quiere comprar $10$ dulces para regalárselos a sus primitos. En la tienda hay dulces de tres sabores, menta, fresa y limón, ¿De cuántas formas puede escogerlos?
+\end{ejemplo}
+\begin{solucion}
+Si llamamos $m$ a la cantidad de dulces de menta, $f$ la  cantidad  de dulces  de  fresa  y $l$ la  cantidad  de  dulces  de  lim ón,  debe  cumplirse que:
+\[m+f+l=10\]
+Y obviamente cada uno de estos números es mayor o igual a cero. Como siempre, lo mejor es analizar algunos casos particulares, por ejemplo $m=0$, implica que $f+l=10$ y la solución son los pares:
+\begin{eqnarray*}
+(0,10)&&(1,9)\\(2,8)&&(3,7)\\
+(4,6)&&(5,5)\\ (6,4)&&(7,3)\\
+(8,2)&&(9,1)\\ (10,0)
+\end{eqnarray*}
+Por lo que hay $11$ posibilidades.\\\\
+Ahora si $m=1$ entonces tenemos $1+l+f=10$ por lo que $l+f=9$.Y las parejas solución son
+\begin{eqnarray*}
+(0,9)&&(1,8)\\(2,7)&&(3,6)\\
+(4,5)&&(5,4)\\ (6,3)&&(7,2)\\
+(8,1)&&(9,0)
+\end{eqnarray*}
+Ahora tenemos $10$ posibilidades. Si  analizamos  el  resto  de  casos (todos  disjuntos) $m=2,3,\ldots,10$,  se  obtendrán  respectivamente $8,7,\ldots,1$  posibilidades,  por  lo  que  la  cantidad  de  formas  que  Ana puede hacer la compra es $11+10+\ldots+1=66$.\\\\
+Si se observa, este problema es distinto a todos los estudiados hasta el  momento,  y  básicamente  se  trata  de  buscar  combinaciones  de objetos, pero  no  todos  los  objetos  son  distintos  (para  el  caso,  los dulces de fresa los consideramos todos iguales,los de menta también y los de limón también).\\\\
+Hay una forma muy ingeniosa de resolver este problema. Haremos lo siguiente: los $10$ dulces los vamos a interpretar como $10$ objetos iguales, $10$ bolas por ejemplo, y para  distinguir  cuáles son de cada sabor, incluiremos $2$ separadores; luego, estos $12$ objetos se permutan, $m$ es la cantidad de bolas que quedan a la izquierda del primer separador,$f$ es la cantidad de bolas que quedan entre los separadores y $l$ es la cantidad de bolas que quedan a la derecha del segundo separador. Además, la cantidad de permutaciones  con  repetición con $10$ bolas y $2$ separadores es
+\[P^{10}_{2}=\frac{12!}{2!\cdot 10!}=66\]
+\end{solucion}
+El problema general se resuelve de la misma forma.
+\begin{teorema}\label{teo1}
+    Dada una colección de objetos clasificados en $k$ tipos de objetos (los objetos del mismo tipo son iguales entres si, y distintos de cualquier objeto de otro tipo), el total de formas de escoger $n$ objetos es
+    \[P^{n}_{k-1}=\frac{(n+k-1)!}{n!\times (k-1)!}\;.\]
+\end{teorema}
+Observe que la respuesta puede verse como un combinatorio también: en total, se tienen $n+k-1$ espacios y se escogen los $n$ (o bien los $k-1$) en los que se ubican las bolas (o bien los separadores), por loque la cantidad de configuraciones buscadas es
+\[\binom{n+k-1}{n}\]
+o bien
+\[\binom{n+k-1}{k-1}\]
+Se enunciarán dos resultados muy importantes que tienen una fuerte relación con el enfoque que hemos presentado.
+\begin{teorema}\label{teo2}
+ El total de soluciones enteras no negativas de la ecuación 
+ \[x_1+ x_2+\cdots+x_k=n\]
+ es igual a $\displaystyle \binom{n+k-1}{n}$.
+\end{teorema}
+
+\begin{teorema}\label{teo3}
+El total de soluciones enteras no negativas de la ecuación 
+\[x_1+x_2+\cdots+x_k=n\]
+donde $x_1\geq r_1$, $x_2\geq r_2$, $\cdots$, $x_k\geq r_k$ es
+\[\binom{n-(r_1+r_2+\cdots+r_k)+k-1}{k-1}\]
+\end{teorema}
+\section{Ejemplos}
+\begin{ejemplo}
+¿De cuántas formas pueden comprarse $20$ galletas de una tienda que vende galletas de $5$ sabores distintos?
+\end{ejemplo}
+\begin{solucion}
+Supongamos que los sabores de las galletas son $S_1$, $S_2$, $S_3$, $S_4$ y $S_5$. Cada colección de $20$ galletas puede representarse por $24$ casillas en las que se han puesto $4$ separadores $|$. Las casillas que quedan entre los separadores nos dicen el número de galletas de cada tipo. Entonces al aplicar el teorema anterior para $n=20$ y $k=5$ tenemos que el resultado es
+\[\binom{20+5-1}{20}=\binom{24}{4}=10620.\]
+\end{solucion}
+
+\begin{ejemplo}
+¿De cuántas formas podemos distribuir $5$ bolas indistinguibles en tres cajas distintas?
+\end{ejemplo}
+\begin{solucion}
+Puesto que las cajas son distintas. Convendremos a designar cada caja por una barra $|$ y cada bola con $O$. y representaremos cada distribución mediante una secuencia de barras y bolas. Por ejemplo la secuencia
+\[OO|O|OO\]
+indica  que  hay  dos  bolas  en  la  caja  $1$,  una  bola  en  la  caja  $2$ y dos  bolas  en  la  caja  $3$. En  general  ,  en  una  sucesión  de  barras y  bolas,  el  orden  relativo  entre  barras  determina  a  que  caja  corresponden,  mientras  que  las bolas  a  la  izquierda  de  cada barra  representan  a  las  bolas  que  hay  en  la  caja  correspondiente. Recíprocamente, cada distribucion corresponde a una secuencia.  Por ejemplo  si  ponemos  2  bolas  en  la  primera  caja,  dejamos  vacía  la segunda,  y  colocamos  3  bolas  en  la  última  caja,  esta  distribución está asociada con la secuencia
+\[OO||OOO\]
+En resumen, debemos contar el numero de formas de permutar $5$ puntos y $2$ barras, que como sabemos es igual a
+\[\binom{5+3-1}{3-1}=\binom{7}{2}=21\]
+\end{solucion}
+\begin{ejemplo}
+Una promotora de ventas debe obsequiar $48$ muestras de un producto a $15$ personas circunstancialmente reunidas con la condición de que todas reciban por lo menos tres muestras, ¿De cuántas formas puede hacerlo?
+\end{ejemplo}
+\begin{solucion}
+Al plantear la ecuación tenemos
+\[x_1+x_2+\cdots+x_{15}=48\]
+donde $x_i$ representa la cantidad de muestras que recibe la persona $i$ y además debe cumplir que $x_i\geq 3$.\\\\
+Por lo que, según el teorema \ref{teo3}, tenemos que 
+\[\binom{48-15(3)+15-1}{15-1}=\binom{17}{14}=680\]
+\end{solucion}
+\begin{ejemplo}
+ ¿Cuántos números naturales menores que un millón tienen la suma de sus cifras igual a $12$?   
+\end{ejemplo}
+\begin{solucion}
+Los números menores que un millón tienen a los sumo seis cifras, por lo  tanto  cualquiera  de  ellos  puede  representarse  esquemáticamente como  una  secuencia  $001807$  representa  $1,807$. La  condición  que imponemos sobre las cifras se traduce entonces en la ecuación
+\[x_1+x_2+\cdots+x_6=12\]
+donde cada $x_i$ representa cada una de las cifras y además $x_i\geq 0$. Así, el número de soluciones es
+\[\binom{12+6-1}{12}=\binom{17}{12}=6188\]
+Sin  embargo;  hay  aquí  una  restricción  sobre  la  secuencia  de  términos  de  la  suma,  ya  que  ninguno  de  ellos  puede  exceder  a  $9$.   Para resolver  esta  dificultad  deberemos  descontar  aquellas  soluciones  en las que algún término es mayor o igual que $10$.  Es decir, en cuantas secuencias es $x_i\geq 10$. Para ello calculamos
+\[\binom{12-10+6-1}{6-1}=\binom{7}{5}=21\]
+Por lo que el total de soluciones es $6188-21(6)=6062$.
+\end{solucion}
+\section{Problemas propuestos}
+\begin{problema}
+Tienes $6$ bolas idénticas y $6$ cajas (distintas) numeradas del $1$ al $6$. ¿De cuántas maneras se pueden distribuir las $6$ bolas entre las cajas?
+\end{problema}
+\begin{problema}
+Las cartas para un juego de cartas coleccionables se pueden comprar en paquetes de $6$ cartas, de las cuales exactamente $1$ de ellas es una carta rara. Si hay un total de $8$ cartas raras que se pueden coleccionar y compras $3$ paquetes de cartas, ¿cuántas combinaciones diferentes de cartas raras podrías tener? Por ejemplo, podrías tener $1$ de las segundas cartas raras y el resto son la octava carta rara.
+\end{problema}
+
+\begin{problema}
+Se han encargado $20$ pupusas de entre los siguientes tipos: revueltas, de queso, de chicharrón, de frijol con queso, de queso con loroco y de ayote.
+\begin{enumerate}
+    \item ¿De cuántas formas puede hacerse la compra?
+    \item ¿De cuántas formas si se tiene que llevar al menos $7$ de queso?
+    \item ¿De cuántas formas si se tiene que llevar a lo sumo $2$ de chicharrón y 10 de ayote?
+    \item ¿De cuántas formas si se tiene que llevar al menos $3$ de cada clase?
+\end{enumerate}
+\end{problema}
+
+\begin{problema}
+Se tienen seis cajas numeradas del $1$ al $6$. De cuántas formas se pueden repartir $20$ pelotas entre las cajas de manera que ninguna quede vacía.
+\end{problema}
+
+\begin{problema}
+¿De cuántas formas pueden distribuirse 20 bolas iguales en 6 cajas, de tal forma que en la primera caja hay al menos 4 bolas y en la última caja no más de 5? ¿Y si también en la penúltima no pueden haber más de 5?
+\end{problema}
+
+\begin{problema}
+¿De cuántas formas pueden ordenarse $n$ ceros y $k-1$ unos si no hay dos $1$ consecutivos?
+\end{problema} 
+
+\begin{problema}
+Existen $5$ formas de expresar el número $4$ como suma de dos enteros no negativos tomando en cuenta el orden: $4 = 0 + 4 = 1 + 3 = 2 + 2 = 3 + 1 = 4 + 0$. Dados los naturales $r$ y $n$, determine:
+\begin{enumerate}
+    \item El número de formas de expresar $200$ en $r$ sumandos;
+    \item El número de formas de expresar $n$ en $200$ sumandos.
+    \item El número de formas de expresar n en r sumandos tales que todos sean mayores o iguales que $5$.
+\end{enumerate}
+\end{problema}
+
+\begin{problema}
+¿Cuántas soluciones hay, entre $1$ y $9$ inclusive, de la ecuación $x_1+x_2+x_3+x_4=26$?
+\end{problema}
+
+\begin{problema}
+Determine el coeficiente de $x_5$ en la expansión de $\left(1 + x + x^2 + \dots + x^{1000} \right)^6 $.
+\end{problema}
+
+\begin{problema}
+Determine el número de formas en que pueden ordenarse en un estante $4$ libros distintos
+de Combinatoria, 5 libros distintos de Geometrıía, $3$ libros distintos de Álgebra y $8$ libros distintos de Cálculo, si los de Geometría deben estar siempre antes que los de álgebra.
+\end{problema}
+
+\begin{problema}
+¿Cuántas maneras hay de distribuir 4 pelotas negras, 4 blancas y 4 azules en 6 cajas distintas?
+\end{problema}
+
+\begin{problema}
+¿De cuántas maneras se pueden acomodar en hilera 5 pelotas rojas, 5 azules y 5 verdes de tal manera que no queden 2 pelotas azules juntas? (Encontrar la solución de dos maneras)
+\end{problema}
+
+\begin{problema}
+Cuántas soluciones tiene la ecuación $\displaystyle x_1+x_2+x_3+x_4+x_5=44$
+\begin{enumerate}
+    \item en enteros no negativos;
+    \item en enteros positivos;
+    \item en enteros no negativos y con $x_2\geq 5$;
+    \item en enteros positivos y con $x_2\leq 5$;
+    \item en enteros positivos, con $x_2\leq 5$ y $x_3<8$.
+\end{enumerate}
+\end{problema}
+\begin{problema}
+Para su fiesta de cumpleaños inversa, Mario está regalando bolsas con juguetes. Si la tienda de fiestas vende $4$ juguetes diferentes y Mario está haciendo $9$ bolsas, cada una con un solo juguete, ¿cuántas combinaciones diferentes de juguetes puede hacer Mario?
+\end{problema}
+
+\begin{problema}
+¿Cuántas maneras hay de elegir números distintos $a$, $b$ y $c$ donde $a < b < c$ de entre los enteros $\{1, 2, \ldots, 110\}$ tal que $a+b+c$ es un número par?
+\end{problema}

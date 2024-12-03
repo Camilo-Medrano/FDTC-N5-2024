@@ -1,0 +1,71 @@
+\documentclass[12pt]{article}
+
+%Paquetes a utilizarse
+\input{Paquetes/package2.tex}
+%\usepackage[margin=2.5cm]{geometry}
+%\usepackage{wasysym}
+%\usepackage{stmaryrd,textcomp}
+%\usepackage{pgf,tikz}
+%\usetikzlibrary{arrows}
+
+\parskip = 2mm   %%%% genera un espacio de X mm entre lo párrafos
+\parindent = 3mm
+\usepackage{multicol}
+\usepackage{iwona}
+
+\newcommand{\tema}{Principios fundamentales}
+\newcommand{\fecha}{Viernes, 2 de diciembre de 2022}
+\newcommand{\sesion}{Corto 2}
+
+\begin{document}
+%\thispagestyle{empty}
+%\newpage
+\thispagestyle{empty}
+
+\begin{figure}[h] 
+	\begin{minipage}[b]{0.26\textwidth}
+		\begin{center}
+			\includegraphics[height=3cm]{Logos/UES.png}
+			\par\end{center}
+	\end{minipage} 
+	\begin{minipage}[b]{0.46\textwidth}
+		\begin{center}
+			UNIVERSIDAD DE EL SALVADOR\\ [0.1cm]
+			PROGRAMA JÓVENES TALENTO\\ [0.1cm]
+	        FDTC 2022\\ [0.1cm]
+                NIVEL 5\\ [0.1cm]
+			COMBINATORIA 
+			\par\end{center}
+	\end{minipage} 
+	\begin{minipage}[b]{0.05\textwidth}
+		\begin{center}
+			\includegraphics[height=2cm]{Logos/LOGO PJT.png}
+			\par\end{center}
+	\end{minipage}
+\end{figure}
+
+\begin{center}
+    \begin{tabular}{p{4.5cm} p{7cm} p{4.5cm}}
+        \tema & \centering\fecha & \hfill\sesion
+    \end{tabular}
+\end{center}
+
+\begin{problema}
+Determinar cuántos triángulos aparecen en la siguiente figura.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.2]{Imagenes/IMG1/img_corto2.png}
+    %\caption{}
+    %\label{fig1}
+\end{figure}
+\end{problema}
+
+\begin{problema}
+Suponga un tablero generado por un cuadrado de $6\times 6$, es decir, de $36$ casillas. En eso vamos a ubicar dos torres (piezas de ajedrez) de tal manera que no se capturen entre ellas. ¿De cuántas maneras se podría realizar esto?
+
+{\small \textbf{Hint.} \textit{La torre se mueve en una línea recta horizontal o vertical a lo largo de cualquier número de casillas desocupadas, hasta que alcanza el final del tablero o es bloqueado por otra pieza. No puede saltar sobre otras piezas. La torre captura de la misma manera en la que se mueve, ocupando la casilla en la que está la pieza oponente. La torre puede colocarse en cualquier casilla del tablero, por tanto es una de las piezas más poderosas.}}
+\end{problema}
+
+\textbf{Crédito extra:} En un concurso navideño, una persona debe adivinar un número decimal. El animador que está dirigiendo el concurso le da las siguientes pistas: \textit{el número tiene $3$ dígitos enteros y $2$ decimales; los dígitos pueden ser $1$, $2$, $3$, $7$ y $8$ y los decimales $6$ y $9$. Además el número es mayor que $300$}. ¿Cuántos números pudiéramos formar con las pistas que nos han dado, si se permite la repetición de los dígitos $1$ y $2$? 
+
+\end{document}

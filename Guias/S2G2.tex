@@ -1,0 +1,129 @@
+\section{Introducción al método de contar de dos formas}
+El método de ``Contar de dos formas'', conocido en inglés como ``Double counting'', es una técnica fundamental en combinatoria y matemática discreta. Este enfoque se basa en el principio de contar el tamaño de un conjunto o la frecuencia de una propiedad de dos maneras diferentes y luego establecer una igualdad entre estos dos métodos de conteo. Esta técnica es invaluable para probar identidades, derivar fórmulas, y descubrir relaciones entre conceptos matemáticos.
+
+\section{Descripción formal del método}
+Para aplicar el método de Contar de Dos Formas, seguimos un proceso estructurado:
+\begin{itemize}
+    \item \textbf{Definición del conjunto o propiedad}: Consideremos un conjunto finito \( S \) o una propiedad asociada con elementos de un conjunto finito. Nuestro objetivo es determinar el tamaño de \( S \), denotado como \( |S| \).
+    \item \textbf{Primera función de conteo}: Sea \( f_1: S \to \mathbb{N} \) una función que cuenta los elementos de \( S \) según una característica específica.
+    \item \textbf{Segunda función de conteo}: Sea \( f_2: S \to \mathbb{N} \) otra función que cuenta los elementos de \( S \), pero bajo una perspectiva diferente.
+    \item \textbf{Establecimiento de la Igualdad}: Demostramos que ambas funciones cuentan el mismo conjunto de elementos, aunque de maneras distintas. Matemáticamente, esto se expresa como:
+    \[ \sum_{s \in S} f_1(s) = \sum_{s \in S} f_2(s) \]
+\end{itemize}
+
+El \textbf{doble conteo} es un método de demostración de identidades combinatorias, que consiste en contar los elementos de un conjunto de dos formas, obteniendo así dos expresiones diferentes para el número de elementos del conjunto, además, es una de las principales herramientas para abordar problemas de combinatoria que aparecen en olimpiadas de matemática.\\\\
+Todas las demostraciones por doble conteo se basan en el siguiente principio.
+\begin{definicion}[Principio de doble conteo]
+Si contamos la cantidad de objetos de cierto conjunto de una forma y resulta $a$ y luego las contamos de otra forma y resulta $b$, entonces $a = b$.
+\end{definicion}
+
+\begin{ejemplo}
+La identidad combinatoria que deseamos probar es la siguiente:
+\[ \binom{n}{r} \cdot \binom{r}{k} = \binom{n}{k} \cdot \binom{n-k}{r-k} \]
+\end{ejemplo}
+
+\begin{solucion}
+\subsection*{Primera forma de contar}
+Consideramos el proceso de seleccionar un subconjunto de \( r \) elementos de un conjunto de \( n \) elementos y luego seleccionar un subconjunto de \( k \) elementos de esos \( r \) elementos. El número total de formas de realizar esta selección en dos pasos es:
+\[ \binom{n}{r} \cdot \binom{r}{k} \]
+
+\subsection*{Segunda forma de contar}
+Otra forma de abordar este proceso es seleccionar directamente \( k \) elementos de un conjunto de \( n \) elementos, y luego seleccionar \( r-k \) elementos de los \( n-k \) elementos restantes. El número total de formas de hacerlo es:
+\[ \binom{n}{k} \cdot \binom{n-k}{r-k} \]
+
+\subsection*{Establecimiento de la igualdad}
+Dado que ambos procesos describen la misma acción de seleccionar un subconjunto de \( k \) elementos y luego extenderlo a un subconjunto de \( r \) elementos, establecemos la igualdad:
+\[ \binom{n}{r} \cdot \binom{r}{k} = \binom{n}{k} \cdot \binom{n-k}{r-k}\;.\]
+\end{solucion}
+
+\begin{tcolorbox}[colback=black!5!white,colframe=black!75!black,title=Ejercicio]
+  Usando el método de contar de dos formas, demostrar la siguiente propiedad
+  \[\binom{n}{k}=\binom{n}{n-k}\;.\]
+  \vspace{5cm}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=black!5!white,colframe=black!75!black,title=Ejercicio]
+  Usando el método de contar de dos formas, demostrar la identidad de Pascal:
+  \[\binom{n}{k}=\binom{n-1}{k}+\binom{n-1}{k-1}\;.\]
+  \vspace{8cm}
+\end{tcolorbox}
+
+\begin{ejemplo}
+Demostrar la identidad
+\[\binom{2n}{2}=2\binom{n}{2}+n^2\;.\]
+\end{ejemplo}
+
+\begin{solucion}
+Sabemos que $\displaystyle \binom{2n}{2}$ nos representa el número de formas de elegir $2$ elementos de $2n$ elementos. Denotemos a ese conjunto como $\displaystyle A=\left\{a_1,a_2,\ldots,a_n,a_{n+1},\ldots,a_{2n}\right\}$. Particionemos el conjunto en dos subconjuntos de $n$ elementos $A_1=\{a_1,a_2,\ldots,a_n\}$ y $A_2=\{a_{n+1},a_{n+2},\ldots,a_{2n}\}$.
+Ahora debemos de elegir $2$ elementos. Por lo cual tendremos los siguientes casos:
+\begin{itemize}
+    \item Si elegimos los $2$ elementos del conjunto $A_1$ sabemos que el número de formas de hacerlo es $\displaystyle \binom{n}{2}$.
+    \item También, si elegimos los $2$ elementos del conjunto $A_2$ sabemos que el número de formas de hacerlo es $\displaystyle \binom{n}{2}$.
+    \item  Ahora elegiremos un elemento del conjunto $A_1$ y un elemento del conjunto $A_2$, sabemos que el número de formas de elegir un elemento del conjunto $A_1$ es $n$ de manera similar el número de maneras de elegir un elemento del conjunto $A_2$ es $n$, ahora por el principio de la multiplicación hay $n^2$ formas de elegir los $2$ elementos. 
+\end{itemize}
+Así, por el principio de la suma, el total de formas es
+\[\binom{n}{2}+\binom{n}{2}+n^2=2\binom{n}{2}+n^2\]
+y con ello la igualdad está demostrada.
+\end{solucion}
+
+\begin{tcolorbox}[colback=black!5!white,colframe=black!75!black,title=Ejercicio]
+Demostar la igualdad
+   \[\binom{n}{k}=\binom{n}{0}\binom{n-2}{k}+2\binom{2}{1}\binom{n-2}{k-1}+\binom{2}{2}\binom{n-2}{k-2}\]
+  \vspace{10cm}
+\end{tcolorbox}
+\begin{ejemplo}
+    Justificar la siguiente igualdad usando el método de contar de dos formas.
+    \[\binom{n+3}{3}=\binom{n+1}{3}+2\binom{n+1}{2}+\binom{n+1}{1}\;.\]
+\end{ejemplo}
+
+\begin{solucion}
+    Según el modelo de cadenas binarias, sabemos que $\displaystyle\binom{n+3}{3}$ nos cuenta la cantidad de cadenas de longitud $n+3$ que contienen $3$ unos. Del lado derecho tenemos que $\displaystyle\binom{n+1}{3}$ es la cantidad de cadenas de longitud $n+1$ que contienen $3$ unos, para hacerla de longitud $n+3$ agreguemos al final $00$. Para $\displaystyle\binom{n+1}{2}$ son las
+cadenas de longitud $n+1$ y que incluyen $2$ unos, para hacerla de longitud $n+3$ y que tenga $3$ unos agreguemos al final $01$ o $10$ de manera que hay $\displaystyle 2\binom{n+1}{2}$. Finalmente $\displaystyle \binom{n+1}{1}$ son cadenas de longitud $n+1$ y que tienen un uno, para hacerla de longitud $n+3$ y con $3$ unos agregaremos al final $11$.\\
+Como cada caso es excluyente del resto, por el principio de la suma, tenemos el resultado:
+\[\overbrace{\binom{n+3}{3}}^{\text{conteo de golpe}}=\underbrace{\binom{n+1}{3}}_{\text{terminan en $00$}}+2\cdot \overbrace{\binom{n+1}{2}}^{\text{terminan en $10$ o $01$}}+\underbrace{\binom{n+1}{1}}\]
+\end{solucion}
+
+\section{Problemas propuestos}
+\begin{problema}
+    Justificar las siguientes igualdades usando caminos, conjuntos y cadenas binarias.
+\begin{enumerate}
+    \item \( \displaystyle \binom{n}{k} = \binom{n-3}{k} + 3\binom{n-3}{k-1} + 3\binom{n-3}{k-2} + \binom{n-3}{k-3} \).
+    \item \( \displaystyle \binom{n+3}{2} = \binom{n+1}{3} + 2\binom{n+1}{2} + \binom{n+1}{1} \)
+\end{enumerate}
+\end{problema}
+
+\begin{problema}
+    Demostrar por caminos la siguiente igualdad
+\[ \binom{4n}{n} = \binom{n}{n} + \binom{3n}{1}\binom{n}{n-1} + \binom{3n}{2}\binom{n}{n-2} + \cdots + \binom{3n}{n}\binom{n}{0} \]
+
+\end{problema}
+
+\begin{problema}
+Demostrar por conjuntos la identidad
+\[ \binom{3n}{n} = 3\binom{n}{3} + 6n\binom{n}{2} + n^3 \]
+\end{problema}
+
+\begin{problema}
+    Demostrar por conjuntos la identidad
+\[ n(n-1)\binom{n-2}{k-2} = k(k-1)\binom{n}{k} \]
+\end{problema}
+
+\begin{problema}
+Se tienen $2n$ personas, y se desea formar un comité de n personas. Sin embargo, hay $n$ parejas entre estas personas, y no se pueden seleccionar dos personas de la misma pareja para el comité. ¿De cuántas formas se pueden formar dichos comités?
+\end{problema}
+
+\begin{problema}
+    Demostrar por diversos métodos (caminos, conjuntos y cadenas binarias) la identidad de Vandermonde
+\[ \binom{m}{0}\binom{n}{r} + \binom{m}{1}\binom{n}{r-1} + \cdots + \binom{m}{r}\binom{n}{0} = \binom{m+n}{r} \]
+
+\end{problema}
+
+\begin{problema}
+En una cuadrícula de \(2n \times 2n\), se quiere ir desde la esquina inferior izquierda a la esquina superior derecha moviéndose solo hacia arriba o hacia la derecha. ¿De cuántas formas se puede hacer esto, de modo que el número de movimientos hacia arriba sea igual al número de movimientos hacia la derecha?
+\end{problema}
+
+\begin{problema}
+   Demostrar por diversos métodos (caminos, conjuntos y cadenas binarias) la identidad de Vandermonde
+\[ \binom{n}{0} + \binom{n+1}{1} + \binom{n+2}{2} + \cdots + \binom{n+r}{r} = \binom{n+r+1}{r} \]
+
+\end{problema}

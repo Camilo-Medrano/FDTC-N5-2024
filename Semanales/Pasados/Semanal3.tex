@@ -1,0 +1,101 @@
+\documentclass[12pt]{article}
+
+%Paquetes a utilizarse
+\input{Paquetes/package2.tex}
+%\usepackage[margin=2.5cm]{geometry}
+%\usepackage{wasysym}
+%\usepackage{stmaryrd,textcomp}
+%\usepackage{pgf,tikz}
+%\usetikzlibrary{arrows}
+
+\parskip = 2mm   %%%% genera un espacio de X mm entre lo párrafos
+\parindent = 3mm
+\usepackage{multicol}
+\usepackage{iwona}
+
+\newcommand{\tema}{Semana 3}
+\newcommand{\fecha}{Sábado, 17 de diciembre de 2022}
+\newcommand{\sesion}{Examen semanal}
+
+\begin{document}
+%\thispagestyle{empty}
+%\newpage
+\thispagestyle{empty}
+
+\begin{figure}[h] 
+	\begin{minipage}[b]{0.26\textwidth}
+		\begin{center}
+			\includegraphics[height=3cm]{Logos/UES.png}
+			\par\end{center}
+	\end{minipage} 
+	\begin{minipage}[b]{0.46\textwidth}
+		\begin{center}
+			UNIVERSIDAD DE EL SALVADOR\\ [0.1cm]
+			PROGRAMA JÓVENES TALENTO\\ [0.1cm]
+	        FDTC 2022\\ [0.1cm]
+                NIVEL 5\\ [0.1cm]
+			COMBINATORIA 
+			\par\end{center}
+	\end{minipage} 
+	\begin{minipage}[b]{0.05\textwidth}
+		\begin{center}
+			\includegraphics[height=2cm]{Logos/LOGO PJT.png}
+			\par\end{center}
+	\end{minipage}
+\end{figure}
+
+\begin{center}
+    \begin{tabular}{p{4.5cm} p{7cm} p{4.5cm}}
+        \tema & \centering\fecha & \hfill\sesion
+    \end{tabular}
+\end{center}
+
+
+
+{\bf PARTE I (20 \%):}\\
+\textit{Determine si las siguientes afirmaciones son falsas o verdaderas e indique con una $V$ en el caso de ser verdadera o una $F$ en el caso de ser falsa. Las afirmaciones no necesitan argumentación.}
+
+  \begin{enumerate}
+
+\item (5\%) Si $A$ y $B$ son conjuntos finitos de la misma cardinalidad, $|A\cup B| = 2022$ y $|A \cap B| = 22,$
+entonces la cardinalidad de $A$ y $B$ es $1000$\dotfill{\bf \rule{1.5cm}{0.7pt}}
+\item (5\%) El total de soluciones enteras no negativas de la ecuaci\'on $x_1+x_2+x_3=10$ es $\displaystyle C^3_9$\dotfill{\bf \rule{1.5cm}{0.7pt}}
+\item (5\%) El número mínimo de estudiantes en un curso para asegurar que tres de ellos nacieron el mismo
+mes es $23$\dotfill{\bf \rule{1.5cm}{0.7pt}}
+\item (5\%) $5$ personas dejan sus abrigos en el guardaropas de un restaurante. Hay $44$ formas para que
+ninguna persona reciba su sombrero.\dotfill{\bf \rule{1.5cm}{0.7pt}}
+ 
+\end{enumerate}
+
+
+{\bf PARTE II (80 \%):}\\
+\textit{Resuelve en forma clara y ordenada cada uno de los problemas que se te 
+presentan, dejando constancia de tus soluciones. Recordar que el examen es individual, es decir soluciones id\'enticas ser\'an anuladas. !`No se te olvide que est\'as 
+en una academia de alto rendimiento!}
+
+
+\begin{problema}
+    Hallar el número de permutaciones de $1,2,3,4,5,6,7$ que no contengan a $3$ en el tercer lugar ni a $5$ en el quinto lugar.
+\end{problema}
+
+\begin{problema}
+    Encuentra el número de formas en las que una empresa puede asignar $9$ proyectos a $4$ personas de modo que cada persona obtenga por lo menos un proyecto.
+\end{problema}
+
+\begin{problema}
+    Hay $100$ personas sentadas en una mesa circular a distancia constante entre sí y al menos $51$ de ellas son mujeres. Verificar que hay al menos $2$ mujeres sentadas en posiciones diametralmente opuestas.
+\end{problema}
+
+\begin{problema}
+    Demuestre que, dados $5$ puntos en el plano con coordenadas enteras, siempre hay dos tales que su punto medio tiene coordenadas enteras. Tenga en cuenta que las coordenadas del punto medio de dos puntos, $A=(x_1,y_1)$ y $B=(x_2,y_2)$, están dadas por $\displaystyle M=\left(\frac{x_1 + x_2}{2}, \frac{y_1 + y_2}{2}\right)$.
+\end{problema}
+
+\textbf{Crédito extra.} ¿Cuántas soluciones existen para la ecuación
+
+\begin{center}
+    $x_1+x_2+x_3 = 13$
+\end{center}
+
+si $5 \geq x_1 \geq 1$, $6 \geq x_2 \geq 1$ y $x_3 \geq 1$?
+
+\end{document}

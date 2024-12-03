@@ -1,0 +1,74 @@
+\documentclass[12pt]{article}
+
+%Paquetes a utilizarse
+\input{Paquetes/package2.tex}
+%\usepackage[margin=2.5cm]{geometry}
+%\usepackage{wasysym}
+%\usepackage{stmaryrd,textcomp}
+%\usepackage{pgf,tikz}
+%\usetikzlibrary{arrows}
+
+\parskip = 2mm   %%%% genera un espacio de X mm entre lo párrafos
+\parindent = 3mm
+\usepackage{multicol}
+\usepackage{iwona}
+
+\newcommand{\tema}{Introducción}
+\newcommand{\fecha}{Miércoles, 30 de noviembre de 2022}
+\newcommand{\sesion}{Corto 1}
+
+\begin{document}
+%\thispagestyle{empty}
+%\newpage
+\thispagestyle{empty}
+
+\begin{figure}[h] 
+	\begin{minipage}[b]{0.26\textwidth}
+		\begin{center}
+			\includegraphics[height=3cm]{Logos/UES.png}
+			\par\end{center}
+	\end{minipage} 
+	\begin{minipage}[b]{0.46\textwidth}
+		\begin{center}
+			UNIVERSIDAD DE EL SALVADOR\\ [0.1cm]
+			PROGRAMA JÓVENES TALENTO\\ [0.1cm]
+	        FDTC 2022\\ [0.1cm]
+                NIVEL 5\\ [0.1cm]
+			COMBINATORIA 
+			\par\end{center}
+	\end{minipage} 
+	\begin{minipage}[b]{0.05\textwidth}
+		\begin{center}
+			\includegraphics[height=2cm]{Logos/LOGO PJT.png}
+			\par\end{center}
+	\end{minipage}
+\end{figure}
+
+\begin{center}
+    \begin{tabular}{p{4.5cm} p{7cm} p{4.5cm}}
+        \tema & \centering\fecha & \hfill\sesion
+    \end{tabular}
+\end{center}
+
+\begin{problema}
+    Manuel está en una reunión con 5 personas, Ana, Bruno, Camila, Diego y Elena. Si al inicio de la reunión todos se saludaron entre todos estrechando sus manos, ¿cuántos saludos de manos ocurrieron en total?
+\end{problema}
+
+\begin{problema}
+    Sea el conjunto universal $U=\{m,u,r,c,i,e,l,a,g,o\}$, y los conjuntos $A=\{c,u,r,a\}$, $B=\{c,i,e,l,o\}$, $C=\{g,u,e,r,o\}$ y $D=\{g,o,l\}$, determine:
+
+    \renewcommand{\labelenumi}{\alph{enumi})}
+    \begin{enumerate}
+        \item $(A \cup D)'$
+        \item $(B' \cup C') - D$
+        \item $|B \cup C|$
+    \end{enumerate}
+\end{problema}
+
+\textbf{Crédito extra:} Describa mediante operaciones de conjuntos las áreas sombreadas de las siguientes figuras:
+
+    \begin{center}
+        \includegraphics[height=3cm]{Imagenes/IMG1/Sombreado3.jpg}
+    \end{center}
+
+\end{document}

@@ -1,0 +1,64 @@
+\documentclass[12pt]{article}
+
+%Paquetes a utilizarse
+\input{Paquetes/package2.tex}
+%\usepackage[margin=2.5cm]{geometry}
+%\usepackage{wasysym}
+%\usepackage{stmaryrd,textcomp}
+%\usepackage{pgf,tikz}
+%\usetikzlibrary{arrows}
+
+\parskip = 2mm   %%%% genera un espacio de X mm entre lo párrafos
+\parindent = 3mm
+\usepackage{multicol}
+\usepackage{iwona}
+
+\newcommand{\tema}{Separadores}
+\newcommand{\fecha}{Miércoles, 14 de diciembre de 2022}
+\newcommand{\sesion}{Tarea 6}
+
+\begin{document}
+%\thispagestyle{empty}
+%\newpage
+\thispagestyle{empty}
+
+\begin{figure}[h] 
+	\begin{minipage}[b]{0.26\textwidth}
+		\begin{center}
+			\includegraphics[height=3cm]{Logos/UES.png}
+			\par\end{center}
+	\end{minipage} 
+	\begin{minipage}[b]{0.46\textwidth}
+		\begin{center}
+			UNIVERSIDAD DE EL SALVADOR\\ [0.1cm]
+			PROGRAMA JÓVENES TALENTO\\ [0.1cm]
+	        FDTC 2022\\ [0.1cm]
+                NIVEL 5\\ [0.1cm]
+			COMBINATORIA 
+			\par\end{center}
+	\end{minipage} 
+	\begin{minipage}[b]{0.05\textwidth}
+		\begin{center}
+			\includegraphics[height=2cm]{Logos/LOGO PJT.png}
+			\par\end{center}
+	\end{minipage}
+\end{figure}
+
+\begin{center}
+    \begin{tabular}{p{4.5cm} p{7cm} p{4.5cm}}
+        \tema & \centering\fecha & \hfill\sesion
+    \end{tabular}
+\end{center}
+
+\begin{problema}
+De cuántas formas pueden distribuirse $20$ bolas iguales en $6$ cajas, de tal forma queen la primera caja hay al menos $4$ bolas y en la última caja no más de $5$? ¿Y si también en la penúltima no pueden haber más de $5$?
+\end{problema}
+
+\begin{problema}
+¿ Cuántas soluciones existen para la desigualdad
+\[x_1+x_2+x_3\leq 11\]
+donde $x_1$, $x_2$ y $x_3$ son enteros no negativos?
+\end{problema}
+
+\textbf{Crédito extra.} Determinar la cantidad de enteros menores que $1000$ que son divisibles por $2$, $3$ o $5$.
+\end{document}

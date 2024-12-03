@@ -1,0 +1,88 @@
+\documentclass[10pt]{article}
+\usepackage{graphics,graphicx}
+%Paquetes a utilizarse
+\input{Paquetes/package2.tex}
+%\usepackage[margin=2.5cm]{geometry}
+\usepackage{caption}
+%\usepackage{wasysym}
+%\usepackage{stmaryrd,textcomp}
+%\usepackage{pgf,tikz}
+%\usetikzlibrary{arrows}
+
+\parskip = 2mm   %%%% genera un espacio de X mm entre lo párrafos
+\parindent = 3mm
+\usepackage{multicol}
+\usepackage{iwona}
+
+\newcommand{\tema}{Principios fundamentales}
+\newcommand{\fecha}{Jueves, 1 de diciembre de 2022}
+\newcommand{\sesion}{Tarea 2}
+
+\begin{document}
+%\thispagestyle{empty}
+%\newpage
+\thispagestyle{empty}
+
+\begin{figure}[h] 
+	\begin{minipage}[b]{0.26\textwidth}
+		\begin{center}
+			\includegraphics[height=3cm]{Logos/UES.png}
+			\par\end{center}
+	\end{minipage} 
+	\begin{minipage}[b]{0.46\textwidth}
+		\begin{center}
+			UNIVERSIDAD DE EL SALVADOR\\ [0.1cm]
+			PROGRAMA JÓVENES TALENTO\\ [0.1cm]
+	        FDTC 2022\\ [0.1cm]
+                NIVEL 5\\ [0.1cm]
+			COMBINATORIA 
+			\par\end{center}
+	\end{minipage} 
+	\begin{minipage}[b]{0.05\textwidth}
+		\begin{center}
+			\includegraphics[height=2cm]{Logos/LOGO PJT.png}
+			\par\end{center}
+	\end{minipage}
+\end{figure}
+
+\begin{center}
+    \begin{tabular}{p{4.5cm} p{7cm} p{4.5cm}}
+        \tema & \centering\fecha & \hfill\sesion
+    \end{tabular}
+\end{center}
+
+\begin{problema}
+    En la figura \ref{cuadro1} podemos colorear cada cuadrado rojo, azul o verde. ¿De cuántas maneras se pueden colorear los cuadrados de manera que 2 cuadrados adyacentes sean de colores diferentes?
+    \begin{figure}[h]
+        \centering
+        \includegraphics[scale=0.5]{Imagenes/IMG1/ejem.png}
+        \caption{Los cuadrados se pintaran de forma que 2 cuadrados adyacentes sean de colores diferentes.}
+        \label{cuadro1}
+    \end{figure}
+
+Por ejemplo, estos son válidos:
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.5]{Imagenes/IMG1/ejem1.png}
+\end{figure}
+
+pero estos no son válidos:
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.5]{Imagenes/IMG1/ejem2.png}
+\end{figure}
+\end{problema}
+
+\begin{problema}
+¿Cuántos triángulos hay en el siguiente diagrama?
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.3]{Imagenes/IMG1/tarea.png}
+\end{figure}
+
+\end{problema}
+
+\textbf{Crédito extra:} ¿Cuántas ternas de enteros positivos $(x,y,z)$ hay de tal manera que
+\[\frac{x^2+y^2}{z}< 7,\]
+y cada componente está sujeta a $x\leq 8$, $y\leq 8$ y $z\leq 5$?
+\end{document}

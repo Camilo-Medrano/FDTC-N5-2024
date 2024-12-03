@@ -1,0 +1,63 @@
+\documentclass[12pt]{article}
+
+%Paquetes a utilizarse
+\input{Paquetes/package2.tex}
+%\usepackage[margin=2.5cm]{geometry}
+%\usepackage{wasysym}
+%\usepackage{stmaryrd,textcomp}
+%\usepackage{pgf,tikz}
+%\usetikzlibrary{arrows}
+
+\parskip = 2mm   %%%% genera un espacio de X mm entre lo párrafos
+\parindent = 3mm
+\usepackage{multicol}
+\usepackage{iwona}
+
+\newcommand{\tema}{Inclusión-Exclusión}
+\newcommand{\fecha}{Miércoles, 14 de diciembre de 2022}
+\newcommand{\sesion}{Corto 5}
+
+\begin{document}
+%\thispagestyle{empty}
+%\newpage
+\thispagestyle{empty}
+
+\begin{figure}[h] 
+	\begin{minipage}[b]{0.26\textwidth}
+		\begin{center}
+			\includegraphics[height=3cm]{Logos/UES.png}
+			\par\end{center}
+	\end{minipage} 
+	\begin{minipage}[b]{0.46\textwidth}
+		\begin{center}
+			UNIVERSIDAD DE EL SALVADOR\\ [0.1cm]
+			PROGRAMA JÓVENES TALENTO\\ [0.1cm]
+	        FDTC 2022\\ [0.1cm]
+                NIVEL 5\\ [0.1cm]
+			COMBINATORIA 
+			\par\end{center}
+	\end{minipage} 
+	\begin{minipage}[b]{0.05\textwidth}
+		\begin{center}
+			\includegraphics[height=2cm]{Logos/LOGO PJT.png}
+			\par\end{center}
+	\end{minipage}
+\end{figure}
+
+\begin{center}
+    \begin{tabular}{p{4.5cm} p{7cm} p{4.5cm}}
+        \tema & \centering\fecha & \hfill\sesion
+    \end{tabular}
+\end{center}
+
+\begin{problema}
+    En el hipódromo, Don Paolo apuesta a cada uno de los diez caballos de una carrera según la posición en la que son favoritos. ¿De cuántas formas pueden llegar los caballos a la meta para que Don Paolo pierda todas las apuestas?
+\end{problema}
+
+\begin{problema}
+    Determine cuántos números en el intervalo del 100 al 1000 inclusive son múltiplos de 5, de 7 o de 11.
+\end{problema}
+
+\textbf{Crédito extra:} ¿De cuántas maneras se pueden ordenar los enteros 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 si los pares no están en suposicón natural?
+
+\end{document}

@@ -1,0 +1,211 @@
+\documentclass[12pt]{article}
+\newtheorem{prob}{Problema}
+\newtheorem{defi}{Definición}
+\newtheorem{ejem}{Ejemplo}
+\newtheorem{sol}{Solución}
+%Paquetes a utilizarse
+\input{Paquetes/package2.tex}
+%\usepackage[margin=2.5cm]{geometry}
+%\usepackage{wasysym}
+%\usepackage{stmaryrd,textcomp}
+%\usepackage{pgf,tikz}
+%\usetikzlibrary{arrows}
+
+\parskip = 2mm   %%%% genera un espacio de X mm entre lo párrafos
+\parindent = 3mm
+\usepackage{multicol}
+\usepackage{iwona}
+
+\newcommand{\tema}{Permutaciones}
+\newcommand{\fecha}{Lunes, 5 de diciembre de 2022}
+\newcommand{\sesion}{Sesión 4}
+
+\begin{document}
+%\thispagestyle{empty}
+%\newpage
+\thispagestyle{empty}
+
+\begin{figure}[h] 
+	\begin{minipage}[b]{0.26\textwidth}
+		\begin{center}
+			\includegraphics[height=3cm]{Logos/UES.png}
+			\par\end{center}
+	\end{minipage} 
+	\begin{minipage}[b]{0.46\textwidth}
+		\begin{center}
+			UNIVERSIDAD DE EL SALVADOR\\ [0.1cm]
+			PROGRAMA JÓVENES TALENTO\\ [0.1cm]
+	        FDTC 2022\\ [0.1cm]
+                NIVEL 5\\ [0.1cm]
+			COMBINATORIA 
+			\par\end{center}
+	\end{minipage} 
+	\begin{minipage}[b]{0.05\textwidth}
+		\begin{center}
+			\includegraphics[height=2cm]{Logos/LOGO PJT.png}
+			\par\end{center}
+	\end{minipage}
+\end{figure}
+
+\begin{center}
+    \begin{tabular}{p{4.5cm} p{7cm} p{4.5cm}}
+        \tema & \centering\fecha & \hfill\sesion
+    \end{tabular}
+\end{center}
+\section{Introducción, notación y ejemplos}
+
+Diremos que una \textit{permutación} es \textbf{una ordenación de una lista de objetos}. Por ejemplo, colocar a cuatro personas en una línea equivale a encontrar permutaciones de cuatro objetos. De manera más abstracta, cada uno de los siguientes es una permutación de las letras $a$, $b$, $c$ y $d$.
+\begin{eqnarray*}
+    a,b,c,d\\
+    a,c,d,b\\
+    b,d,a,c\\
+    d,c,b,a\\
+    c,a,d,b
+\end{eqnarray*}
+Se debe tener en cuenta que todos los objetos deben aparecer en una permutación y dos ordenaciones se consideran diferentes si algún objeto aparece en un lugar diferente en las ordenaciones.\\\\
+Las permutaciones son importantes en una variedad de problemas de conteo (particularmente aquellos en los que el orden es importante), así como en otras áreas de las matemáticas.\\\\
+El ejemplo más simple de una permutación es el caso en el que todos los objetos deben organizarse, como se hizo en la previamente para $a$, $b$, $c$, $d$. La pregunta se convierte así en la siguiente:
+\begin{center}
+    \textbf{Dada una lista de objetos, ¿cómo se pueden enumerar todas las permutaciones posibles?}
+\end{center}
+Hay varios algoritmos para enumerar todas las permutaciones; un ejemplo es el siguiente algoritmo recursivo:
+\begin{itemize}
+    \item Si la lista contiene un solo elemento, entonces devuelva el elemento único.
+    \item Si la lista contiene más de un elemento, recorra cada elemento de la lista y devuelva este elemento concatenado con todas las permutaciones de los $n-1$ objetos restantes.
+\end{itemize}
+
+\begin{ejemplo}
+Marisol tiene cinco adornos diferentes que quiere colocar en línea sobre su escritorio. ¿De cuántas maneras puede acomodar los adornos?
+\end{ejemplo}
+Podemos pensar en el escritorio de Lisa como si tuviera cinco posiciones en una línea. Hay $5$ adornos, lo que da $5$ opciones para elegir qué adorno va en la primera posición. Después de colocar el primer adorno, hay 4 opciones de elegir qué adorno colocar en la segunda posición. Repitiendo este argumento, hay 3 opciones para la tercera posición, 2 opciones para la cuarta posición y 1 opción para la última posición. Por el principio de la multiplicación, el total de formas para ubicar el adorno es:
+\[5\times 4\times 3\times 2\times 1=120\]
+En general,
+\begin{center}
+    \textbf{Dada una lista de $n$ objetos distintos, ¿cuántas permutaciones diferentes de los objetos hay?}
+\end{center}
+Dado que cada permutación es una ordenación, comience con una ordenación vacía que consta de $n$ posiciones en una línea que se llenará con los $n$ objetos. Hay $n$ opciones para elegir qué objeto colocar en la primera posición. Después de colocar el primer objeto, quedan $n-1$ objetos, por lo que hay $n-1$ opciones para elegir qué objeto colocar en la segunda posición. Repitiendo este argumento, hay $n-2$ opciones para la tercera posición, $n-3$ opciones para la cuarta posición, y así sucesivamente. Para la $n$-ésima posición, el número de opciones es $n-(n-1)= 1$. Entonces la regla del producto implica que el número total de pedidos es:
+\[n\times (n-1)\times (n-2)\times(n-3)\times \ldots \times 1=n!\]
+Para un entero positivo $n$, la notación $n!$ denota el factorial de $n$ y se refiere al producto de todos los números enteros positivos de $1$ a $n$. Tenga en cuenta que $0!$ es el producto vacío y se define como $1$ (observar que este concepto lo declaramos en la clase anterior).\\\\
+El argumento anterior muestra el siguiente resultado:
+\begin{teorema}
+    El número de permutaciones de $n$ objetos distintos es $n!$, el factorial de $n$.
+\end{teorema}
+\begin{ejemplo}
+Mauricio está jugando con una baraja estándar de $52$ naipes. Barajea las cartas y luego voltea la carta superior para mostrar un as de espadas. Si continúa repartiendo las cartas de la parte superior de la baraja, ¿cuántas permutaciones diferentes hay para las cartas restantes de la baraja?
+\end{ejemplo}
+\begin{solucion}
+    Dado que la primera carta es un as de espadas, quedan $51$ cartas distintas en la baraja. Entonces hay $51!$ diferentes permutaciones de las cartas restantes.
+\end{solucion}
+\section{Arreglos}
+Considere el siguiente problema:
+
+\begin{center}
+    Lisa tiene $13$ adornos diferentes y quiere poner $4$ adornos en su manto. ¿De cuántas maneras es esto posible?
+\end{center}
+Usando la regla del producto, Lisa tiene $13$ opciones para qué adorno colocar en la primera posición, $12$ para la segunda posición, $11$ para la tercera posición y $10$ para la cuarta posición. Entonces, el número total de opciones que tiene es $13 \times 12 \times 11 \times 10$. Observar que usando la notación factorial, esto es equivalente al número total de elecciones
+\[13\times 12\times 11\times 10=\frac{13\times 12\times 11\times 10\times 9!}{9!}=\frac{13!}{9!}\]
+Usando el mismo argumento, podemos proceder con el caso general. \textbf{Si tenemos $n$ objetos y queremos ordenar $k$ de ellos en una fila}, hay $\displaystyle\frac{n!}{(n-k)!}$ maneras de hacer esto. Esto también se conoce como una permutación $k$ de $n$, y esto se denota por $\displaystyle P_k^n$.
+\begin{ejemplo}
+    ¿Cuántas contraseñas de $4$ caracteres se pueden formar si los caracteres permitidos para usar sin repetición son $0, 1, 2, 3, ..., 9$ y $A, B, C, ..., Z$ y $a, b, c, ..., z$?
+\end{ejemplo}
+\begin{solucion}
+    Utilizando el principio de la suma, tenemos que el total de caracteres a elegir viene dado por
+    \[10+26+26=62\;.\]
+    Así que tenemos que organizar $4$ objetos de los $62$ objetos disponibles, el número de formas de hacerlo es igual a
+    \[P^{62}_4=\frac{62!}{(62-4)!}=\frac{62!}{58!}=\frac{62\times 61\times 60\times 59\times 58!}{58!}=62\times 61\times 60\times 59=13388280\]
+    Por tanto, existen $13388280$ arreglos posibles.
+\end{solucion}
+\begin{ejemplo}
+Si hay 25 aeropuertos en una línea de aviones, ¿cuántos tipos de boletos sencillos de segunda clase se deben imprimir para que un pasajero pueda viajar de una estación a otra?
+\end{ejemplo}
+
+\begin{solucion}
+Es como elegir dos aeropuertos de $25$ aeropuertos. El orden de los aeropuertos (inicio y destino) es importante, es decir, $A\longrightarrow B$ no es lo mismo que $B\longrightarrow A$. Por lo tanto, usamos la permutación para seleccionar dos de $25$, es decir,
+\[P^{25}_2=\frac{25!}{(25-2)!}=\frac{25!}{23!}=\frac{25\times 24\times 23!}{23!}=25\times 24=600\]
+\end{solucion}
+Y por lo tanto, se deben hacer $600$ boletos.
+\section{Permutaciones de objetos en una circunferencia}
+
+\begin{definicion}[Permutación circular] Es un arreglo u ordenación de elementos diferentes alrededor de un objeto . 
+En estas ordenaciones , no hay primer ni último elemento , por hallarse todos en línea cerrada. Para determinar el número de permutaciones circulares de $n$ elementos distintos, basta fijar la posición de uno de ellos y los $n-1$ restantes podrán ordenarse de $(n-1)!$ maneras. Es decir,
+\[P^{\;\text{Circular}}_n=P^C_n=(n-1)!\]
+\end{definicion}
+\begin{obs}
+Si se toma otro elemento como fijo, las ordenaciones de los restantes serán seguro uno de los ya considerados  Para diferenciar una permutación circular de otra, se toma uno de los elementos como elemento de referencia y se recorre en sentido horario o antihorario. Si se encuentran los elementos en el mismo orden , entonces ambas permutaciones serán iguales y en caso contrario , diferentes.
+\end{obs}
+
+\begin{ejemplo}
+¿De cuántas maneras diferentes $4$ amigos se podrán ubicar alrededor de una mesa circular? 
+\end{ejemplo}
+\begin{solucion}
+Se toma un lugar como punto de referencia, eso implica que a los otros tres lugares se les tomará como si fuese una permutación lineal. Por lo cual, tenemos
+\[P^{\;\text{Circular}}_4=P^C_4=(4-1)!=3!=6\]
+\end{solucion}
+
+\begin{ejemplo}
+    ¿De cuántas maneras distintas se pueden ubicar a $5$ parejas de esposos alrededor de una fogata, de tal manera que cada matrimonio permanezca siempre junto?
+\end{ejemplo}
+
+\begin{solucion}
+Primero debemos de ordenar a cada pareja por separado y luego a todos juntos en forma circular y la idea clave es tomar a cada pareja como un sólo objeto. Ahora, cada pareja se puede ubicar de $2!$ maneras y como tenemos $5$ parejas, estas se pueden ordenar de $P^C_5=(5-1)!$ maneras. Por el principio de la multiplicación
+\[\underbrace{2!\times 2!\times 2!\times 2!\times 2!}_{\text{por parejas}}\underbrace{\times}_{\text{y}}\underbrace{(5-1)!}_{\text{juntos}}=32\times 4!=768\]
+\end{solucion}
+Por tanto, hay $768$ maneras de ordenar a las parejas.
+\section{Permutaciones de objetos idénticos}
+Hasta ahora hemos permutado elementos diferentes; es decir, que se pueden distinguir. Sin embargo, ese no siempre es el caso. 
+En las situaciones de permutación en las que los conjuntos tienen elementos repetidos se usa el siguiente razonamiento:  \textit{Se calcula el número total de permutación como si todos los elementos del conjunto fuesen distintos, y luego se divide este total por el número de veces en que el ordenamiento no se altera debido al intercambio de elementos similares.} 
+
+\begin{ejemplo}
+El número total de permutaciones distintas que se pueden formar con las letras de la palabra \textbf{BANANA} se obtiene de la siguiente manera.  Número de palabras que se podría formar es: $6!$ 
+Como ocurre la repetición $(AAA)$, debemos dividir este arreglo entre ellas dividendo el total entre 3!. Y asimismo para $(NN)$ diviendo el total entre $2!$. Por lo cual hay
+\[\frac{6!}{2!\times 3!}=60\]
+Y hay $60$ palabras diferentes.
+\end{ejemplo}
+
+\begin{definicion}[Permutaciones con repetición] Las permutaciones con repetición de $n$ elementos donde el primer elemento se repite $a$ veces , el segundo $b$ veces , el tercero $c$ veces,... de tal modo que $n=a+b+c+...$, son los distintos grupos que pueden formarse con esos $n$ elementos de forma que: sí entran todos los elementos, sí importa el orden, sí se repiten los elementos, podemos calcular el total mediante
+\[PR^{\;n}_{\;a;b;c;\ldots}=\frac{n!}{a!\times b!\times c!\times \ldots}\]
+\end{definicion}
+\begin{ejemplo}
+¿Cuántos números diferentes de 6 dígitos se pueden obtener usando los dígitos $5,5,7,7,7,8$?
+\end{ejemplo}
+\begin{solucion}
+ En este caso, vemos que el número $5$ se repite $2$ veces, el número $7$ se repite $3$ veces y el número $8$ tan solo aparece una vez. Luego tenemos que
+ \[PR^{\;6}_{\;1;2;3}=\frac{6!}{1!\times 2!\times 3!}=60\]
+ Es decir, existen un total de $60$ número para formar con los dígitos dados.
+\end{solucion}
+\begin{ejemplo}
+¿De cuántas maneras diferentes se pueden ordenar en una fila seis sodas negras, dos rojas y cuatro amarillas?
+\end{ejemplo}
+\begin{solucion}
+Notemos que
+\begin{eqnarray*}
+    n&=&6\\
+    r&=&2\\
+    a&=&4\\
+\end{eqnarray*}
+Nos da un total $T=n+r+a=6+2+4=12$. Por tanto, los arreglos a formar se calculan de la siguiente manera:
+\[PR^{\;T}_{\;n;r;a}=\frac{T!}{n!\times r!\times a!}=\frac{12!}{6!\times 2!\times 4!}=13860\]
+\end{solucion}
+
+\section{Retroalimentación}
+\begin{problema}
+Los dígitos $1$, $7$, y $8$ y $5$ copias del dígito $5$ están dispuestos para formar un número entero de $8$ dígitos. ¿Cuántos enteros diferentes se pueden formar?
+\end{problema}
+
+\begin{problema}
+Si tenemos que 
+\[P^n_2=20\cdot P^n_3\]
+¿cuál es el valor de $n$?
+\end{problema}
+\begin{problema}
+Se preparan tres banderas de color amarillo, rojo y azul para el envío de señales. Cada señal consta de una, dos o tres banderas donde se permite la repetición en el color de la bandera. Por ejemplo, \textbf{rojo, amarillo} y \textbf{azul, azul, rojo} son dos señales posibles. ¿Cuántas señales distintas se pueden hacer?
+\end{problema}
+
+\begin{problema}
+    ¿De cuántas maneras se pueden sentar tres perros y dos gatos alrededor de una mesa circular? Considere que dos animales del mismo tipo son idénticos, y las configuraciones que se pueden rotar para que coincidan también se consideran idénticas.
+\end{problema}
+
+\begin{problema}
+¿Cuántos números diferentes de $10$ cifras se pueden escribir usando las cifras $1$, $2$ y $3$ con la condición de que la cifra $3$ se utilice en cada número exactamente dos veces y que además est número sea divisible por $9$?
+\end{problema}
+\end{document}

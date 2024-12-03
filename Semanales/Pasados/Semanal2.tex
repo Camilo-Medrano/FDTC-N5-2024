@@ -1,0 +1,133 @@
+\documentclass[12pt]{article}
+
+%Paquetes a utilizarse
+\input{Paquetes/package2.tex}
+%\usepackage[margin=2.5cm]{geometry}
+%\usepackage{wasysym}
+%\usepackage{stmaryrd,textcomp}
+%\usepackage{pgf,tikz}
+%\usetikzlibrary{arrows}
+
+\parskip = 2mm   %%%% genera un espacio de X mm entre lo párrafos
+\parindent = 3mm
+\usepackage{multicol}
+\usepackage{iwona}
+
+\newcommand{\tema}{Semana 2}
+\newcommand{\fecha}{Sábado, 10 de diciembre de 2022}
+\newcommand{\sesion}{Examen semanal}
+
+\begin{document}
+%\thispagestyle{empty}
+%\newpage
+\thispagestyle{empty}
+
+\begin{figure}[h] 
+	\begin{minipage}[b]{0.26\textwidth}
+		\begin{center}
+			\includegraphics[height=3cm]{Logos/UES.png}
+			\par\end{center}
+	\end{minipage} 
+	\begin{minipage}[b]{0.46\textwidth}
+		\begin{center}
+			UNIVERSIDAD DE EL SALVADOR\\ [0.1cm]
+			PROGRAMA JÓVENES TALENTO\\ [0.1cm]
+	        FDTC 2022\\ [0.1cm]
+                NIVEL 5\\ [0.1cm]
+			COMBINATORIA 
+			\par\end{center}
+	\end{minipage} 
+	\begin{minipage}[b]{0.05\textwidth}
+		\begin{center}
+			\includegraphics[height=2cm]{Logos/LOGO PJT.png}
+			\par\end{center}
+	\end{minipage}
+\end{figure}
+
+\begin{center}
+    \begin{tabular}{p{4.5cm} p{7cm} p{4.5cm}}
+        \tema & \centering\fecha & \hfill\sesion
+    \end{tabular}
+\end{center}
+
+
+
+{\bf PARTE I (20 \%):}\\
+\textit{Determine si las siguientes afirmaciones son falsas o verdaderas e indique con una $V$ en el caso de ser verdadera o una $F$ en el caso de ser falsa. Las afirmaciones no necesitan argumentación.}
+
+  \begin{enumerate}
+
+  \item (5\%) $\left( n-\cfrac{1}{n}\right)^2=n^2+1/n^2-2$\dotfill{\bf \rule{1.5cm}{0.7pt}}
+\item (5\%) $2^{2022}=2+C^1_{2022}+C^2_{2022}+C^3_{2022}+\cdots +C^{2021}_{2022}$ \dotfill{\bf \rule{1.5cm}{0.7pt}}
+\item (5\%) En la figura, el número de caminos para llegar del punto $A$  al punto $B$ es $C^2_2+C^2_6+C^2_3$ \dotfill{\bf \rule{1.5cm}{0.7pt}}
+
+\begin{figure}[H]
+    \centering
+    \scalebox{0.35}{\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\clip(-9.74,-0.36) rectangle (0.8,9.2);
+\draw [line width=1.2pt] (-7,3)-- (-7,1);
+\draw [line width=1.2pt] (-7,1)-- (-5,1);
+\draw [line width=1.2pt] (-5,1)-- (-5,3);
+\draw [line width=1.2pt] (-7,3)-- (-5,3);
+\draw [line width=1.2pt] (-5,7)-- (-5,3);
+\draw [line width=1.2pt] (-5,3)-- (-3,3);
+\draw [line width=1.2pt] (-5,7)-- (-3,7);
+\draw [line width=1.2pt] (-3,7)-- (-3,3);
+\draw [line width=1.2pt] (-3,8)-- (-3,7);
+\draw [line width=1.2pt] (-3,7)-- (-1,7);
+\draw [line width=1.2pt] (-3,8)-- (-1,8);
+\draw [line width=1.2pt] (-1,8)-- (-1,7);
+\draw [line width=1.2pt] (-7,2)-- (-5,2);
+\draw [line width=1.2pt] (-6,3)-- (-6,1);
+\draw [line width=1.2pt] (-4,7)-- (-4,3);
+\draw [line width=1.2pt] (-5,4)-- (-3,4);
+\draw [line width=1.2pt] (-5,5)-- (-3,5);
+\draw [line width=1.2pt] (-5,6)-- (-3,6);
+\draw [line width=1.2pt] (-2,8)-- (-2,7);
+\draw (-7.58,1.24) node[anchor=north west] {$\mathbf{A}$};
+\draw (-0.9,8.84) node[anchor=north west] {$\mathbf{B}$};
+\end{tikzpicture}}
+\end{figure}
+\item (5\%) $(n!+2)!=(n!+2)(n!+1)n!$ para cualquier número natural $n$\dotfill{\bf \rule{1.5cm}{0.7pt}}
+ 
+\end{enumerate}
+
+
+{\bf PARTE II (80 \%):}\\
+\textit{Resuelve en forma clara y ordenada cada uno de los problemas que se te 
+presentan, dejando constancia de tus soluciones. Recordar que el examen es individual, es decir soluciones id\'enticas ser\'an anuladas. !`No se te olvide que est\'as 
+en una academia de alto rendimiento!}
+
+
+\begin{problema}
+    ¿Cuántos números de $8$ dígitos hay, tales que son divisibles por $9$ y todos los dígitos son distintos?
+\end{problema}
+
+\begin{problema}
+   ¿De cuántas maneras puedes colocar $5$ torres idénticas en un tablero de ajedrez de $6$ por $10$ de tal manera que ninguna de las torres se ataque entre sí? 
+\end{problema}
+
+\begin{problema}
+   Utilizar el teorema del binomio para probar la fórmula:
+
+   \begin{center}
+       $\binom{n}{0} + \binom{n}{2} + \binom{n}{4} + ... = \binom{n}{1} + \binom{n}{3} + \binom{n}{5} + ...$
+   \end{center}
+\end{problema}
+
+\newpage
+
+\begin{problema}
+   Demuestre por caminos la siguiente identidad
+
+   \begin{center}
+       $C^{n}_{4n} = C^{0}_{3n} C^{n}_{n} + C^{1}_{3n} C^{n-1}_{n} + C^{2}_{3n} C^{n-2}_{n} + ... + C^{n}_{3n} C^{0}_{n}$
+   \end{center}
+\end{problema}
+
+
+%Consideren esta propuesta de crédito
+\textbf{Crédito extra.} Considere todos los números de $7$ dígitos que contienen cada uno de los dígitos $1$, $2$, $3$, $4$, $5$, $6$, $7$ exactamente una vez y que no son divisibles por $5$. Están ordenados en una lista en orden creciente. Encuentra el número $2000$ en esta lista.
+
+
+\end{document}

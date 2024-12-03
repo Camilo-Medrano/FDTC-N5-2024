@@ -1,0 +1,290 @@
+\section{Combinaciones}
+
+Hemos dicho que un conjunto \textit{es una colección no ordenada de elementos distintos}, ahora dado un conjunto de $n$ elementos supongamos que necesitamos seleccionar $k\leq n$ elementos no ordenados de este, ¿de cuantas maneras podemos hacer esto? más concretamente ¿cuántos subconjuntos hay de $k$ elementos en un conjunto dado de $n$ elementos con $k\leq n$? este número se le conoce como número combinatorio y se denota por como $\displaystyle C_k^n$, \( C(n, k) \)  o como es frecuente $\displaystyle {n \choose k}$ acontinuación presentamos diversas modelos que nos llevan a dicha definición.
+
+\subsection{Modelo conjuntista}
+
+\begin{definicion}
+ En el modelo conjuntista, las combinaciones se representan mediante subconjuntos. Supongamos que tenemos un conjunto \( A \) con \( n \) elementos. La combinación de \( k \) elementos de \( A \) y se refiere a todos los subconjuntos de \( A \) con exactamente \( k \) elementos.   
+\end{definicion}
+
+\begin{ejemplo}
+Si \( A = \{a, b, c\} \), entonces \( C(3, 2) \) representa todas las combinaciones posibles de elegir 2 elementos de \( A \). Estas combinaciones serían \(\{a, b\}\), \(\{a, c\}\), y \(\{b, c\}\).
+\end{ejemplo}
+
+\begin{ejemplo}
+Hallar $\displaystyle\binom{n}{1}, \displaystyle\binom{n}{n-1}, \binom{n}{n}$ y $\displaystyle\binom{n}{0}$. 
+\end{ejemplo}
+
+\begin{solucion}
+Para los subconjuntos de solo un elemento tenemos $n$ opciones claramente, así $\displaystyle\binom{n}{1}=n$. Para cada subconjunto de $n-1$ elemento existe uno y solo un subconjunto unitario cuyo elemento es el que no se escogió en los $n-1$, así contar todos los subconjuntos de $n-1$ elementos equivale a contar los subconjunto de tamaño $1$, luego $\displaystyle\binom{n}{n-1}=n$. El único subconjunot de $n$ elementos en un conjunto de tamaño $n$ es el mismo, así como también el único subconjunto que contiene cero elementos es el subconjunto vacío, luego $\displaystyle\binom{n}{n}=\displaystyle\binom{n}{0}=1$.     
+\end{solucion}
+
+\subsection{Fórmula de Combinaciones}
+
+La fórmula para calcular el número de combinaciones \( C(n, k) \) es:
+
+\[ C_{k}^n=C(n, k) = \binom{n}{k} = \frac{n!}{k!(n-k)!} \]
+
+La fórmula refleja la cantidad de maneras diferentes en las que puedes elegir \( k \) elementos de un conjunto de \( n \) elementos, sin tener en cuenta el orden.
+
+\begin{ejemplo}
+Supongamos que tienes un conjunto \( B = \{a, b, c, d\} \), y deseas encontrar \( C(4, 2) \), es decir, el número de combinaciones de 2 elementos de \( B \). Aplicamos la fórmula:
+
+\[ \binom{4}{2} = \frac{4!}{2!(4-2)!} = \frac{24}{2 \cdot 2} = 6 \]
+Por lo tanto, hay $6$ maneras diferentes de elegir 2 elementos de \( B \).
+\end{ejemplo}\vspace{0.3cm}
+
+\begin{ejemplo}
+Supongamos que tienes un conjunto de 5 puntos no colineales en un plano, etiquetados como \( P_1, P_2, P_3, P_4, P_5 \). Queremos encontrar el número de formas en que puedes elegir 3 puntos para formar un triángulo. La solución es \( C(5, 3) \). Veamos,
+
+\[ \binom{5}{3} = \frac{5!}{3!(5-3)!} = \frac{120}{6 \cdot 2} = 10 \]
+Entonces, hay 10 formas diferentes de elegir 3 puntos para formar un triángulo con estos 5 puntos (intenta esbozar algunos triángulos).
+\end{ejemplo}\vspace{0.3cm}
+
+\begin{ejemplo}
+Imagina que tienes 4 líneas en un plano no paralelas dos a dos, numeradas como \( L_1, L_2, L_3, L_4 \). Queremos saber de cuántas maneras puedes elegir 2 líneas para formar un cruce. 
+\end{ejemplo}
+
+\begin{solucion}
+La respuesta es \( C(4, 2) \).
+
+\[ \binom{4}{2} = \frac{4!}{2!(4-2)!} = \frac{24}{2 \cdot 2} = 6 \]
+
+Así que hay 6 maneras diferentes de seleccionar 2 líneas para formar un cruce con estas 4 líneas.
+\end{solucion}
+
+
+
+\begin{ejemplo}
+Supongamos que tienes 6 segmentos de línea en un plano, representados como \[ S_1, S_2, S_3, S_4, S_5, S_6\;. \] Queremos determinar cuántas formas existen de seleccionar 4 segmentos para formar un cuadrilátero. 
+\end{ejemplo}
+
+\begin{solucion}
+La solución es \( C(6, 4) \).
+
+\[ \binom{6}{4} = \frac{6!}{4!(6-4)!} = \frac{720}{24} = 30 \]
+Por lo tanto, hay 30 maneras diferentes de elegir 4 segmentos para formar un cuadrilátero con estos 6 segmentos. 
+\end{solucion}
+
+
+
+\begin{ejemplo}
+Supongamos que cuentas con un grupo de 8 voluntarios, etiquetados como \(V_1, V_2, \ldots, V_8\). Este será nuestro conjunto base.
+\end{ejemplo}
+
+\begin{solucion}
+\[ A = \{V_1, V_2, V_3, V_4, V_5, V_6, V_7, V_8\} \]
+Decides formar equipos de 3 voluntarios cada uno. Entonces, en términos combinatorios, estás buscando todas las combinaciones posibles de grupos de 3 voluntarios seleccionados de tu conjunto \(A\).\\\\
+\[ \binom{8}{3} = \frac{8!}{3!(8-3)!} = \frac{8!}{3! \cdot 5!} =56\]
+Por lo tanto, hay 56 formas únicas de formar equipos de 3 voluntarios cada uno a partir del grupo de 8 voluntarios disponibles.   
+\end{solucion}
+
+\begin{ejemplo}
+Calcular $\displaystyle \binom{n}{2}$.
+\end{ejemplo}
+
+\begin{solucion}
+Fácilmente se puede calcular usando la fórmula para combinaciones, no obstante daremos otro método de solución dado que es conveniente en los problemas desarrollar algunas estrategias para contar.
+
+Supongamos que el conjunto $A=\{a_1, a_2, a_3, \cdots a_n$. Usaremos recurrencia y el principio de la suma para esta prueba; Sea $S_k$ el total de subconjuntos de dos elementos que hay en un subconjunto de $k$ elementos. Los suconjuntos de dos elementos se pueden clasificar en los subconjuntos que contienen al n-ésimo elemento $a_n$ y los subconjuntos de dos elementos que no lo contienen, notemos que hay $n-1$ subconjuntos que contienen a $a_n$, pues para cada subconjunto de dos elementos solo debemos seleccinar un elemento del conjunto dado que $a_n$ está fijo. Además para los subconjuntos de dos elementos que no contienen a $a_n$ equivale hallar los subconjuntos de cardinalidad 2 de un subconjunto de $n-1$ elementos a saber $\{a_1, a_2, a_3, \cdots a_{n-1}$. Entonces tenemos la fórmula de recurrencia $$\displaystyle \binom{n}{2}=S_n = (n-1)+S_{n-1}.$$
+
+Dado que $S_2=\displaystyle \binom{2}{2}=1$, tenemos 
+\begin{eqnarray*}
+\displaystyle \binom{n}{2} & = & S_n = (n-1)+S_{n-1}\\
+& = & (n-1)+(n-2)+S_{n-2}\\
+&\vdots & \\
+& = & (n-1)+(n-2)+(n-3)+\cdots 2+1=\dfrac{n(n-1)}{2} 
+\end{eqnarray*}
+\end{solucion}
+
+\begin{teorema}
+    Para todo $n$ se cumple la siguiente identidad $$2^n=\binom{n}{0}+\binom{n}{1}+\binom{n}{2}+\cdots +\binom{n}{n-1}+\binom{n}{n}.$$
+\end{teorema}
+\begin{demostracion}
+    Se deja como ejercicio al lector.
+\end{demostracion}
+
+\subsection{Resultados sobre combinaciones}
+\begin{teorema}[Teorema de Pascal]
+Para cualquier número entero positivo \(n\) y \(k\) tal que \(0 \leq k \leq n\), se cumple que \[\displaystyle \binom{n}{k} = \binom{n-1}{k-1}+ \binom{n-1}{k}\;.\]
+\end{teorema}
+
+\begin{demostracion}
+Seleccionemos un elemento particular $p$ del conjunto, ahora los dos posibles casos disjuntos para seleccionar subconjuntos de tamaño $k$ son: que se incluya el elemento particular $p$ seleccionado o que no se incluya, entonces por el principio de la suma tenemos $$\binom{n}{k} = \{\text{subconjuntos de tamaño}\, k\, \text{que contienen a}\,p\}+\{\text{subconjuntos de tamaño}\, k\, \text{que no contienen a}\,p\}.$$
+
+Pero el total de subconjuntos de tamaño $k$ que no contienen a $p$ es $\displaystyle\binom{n-1}{k}$, mientras que si $p$ debe ser un elemento fijo en cada subconjunto de tamaño $k$ solo debemos seleccionar $k-1$ elementos de los $n-1$ posibles dado que no podemos volver a seleccionar $p$. Por lo tanto el total de subconjuntos que contienen a $p$ es $\displaystyle\binom{n-1}{k-1}$ y por consiguiente el teorema está probado.
+\end{demostracion}
+
+\begin{demostracion}
+(Utilizando la fórmula de combinaciones \(\displaystyle \binom{n}{k} = \frac{n!}{k!(n-k)!}\)).
+
+\[\binom{n-1}{k} = \frac{(n-1)!}{k!(n-k-1)!} \quad \text{y} \quad \binom{n-1}{k-1} = \frac{(n-1)!}{(k-1)!(n-k)!}\]
+Ahora:
+\begin{eqnarray*}
+    \binom{n-1}{k-1}+\binom{n-1}{k}&=&\frac{(n-1)!}{(k-1)!(n-k)!}+\frac{(n-1)!}{k!(n-k-1)!}\\
+    &=&\frac{k\cdot (n-1)!}{k\cdot(k-1)!(n-k)!}+\frac{(n-k)\cdot(n-1)!}{(n-k)\cdot k!(n-k-1)!}\\
+    &=& \frac{k\cdot (n-1)!}{k!(n-k)!}+\frac{(n-k)\cdot (n-1)!}{k!(n-k)!}\\
+    &=&\frac{k(n-1)!+(n-k)(n-1)!}{k!(n-k)!}\\
+    &=&\frac{\cancel{k(n-1)!}+n(n-1)!-\cancel{k(n-1)!}}{k!(n-k)!}\\
+    &=&\frac{n!}{k!(n-k)!}\\
+    &=&\binom{n}{k}
+\end{eqnarray*}
+\end{demostracion}
+
+\begin{teorema}[Ley de simetría]
+Para cualquier número entero no negativo \( n \) y \( k \) tal que \( 0 \leq k \leq n \), se cumple que \[ \binom{n}{k} = \binom{n}{n-k} \].
+\end{teorema}
+
+\begin{demostracion}
+(Utilizando el principio de biyección)\\
+Para cada subconjunto de $k$ elementos hay exactamente un subconjunto de $n-k$ elementos que no contiene los $k$ elementos seleccionados, así contar el total de subconjuntos de $k$ elementos de un conjunto de $n$ elementos es equivalente a contar todos los subconjuntos de $n-k$ elementos que hay en este.
+\end{demostracion}
+
+\begin{demostracion}
+(Utilizando la fórmula).
+\[ \binom{n}{n-k} = \frac{n!}{(n-k)![n-(n-k)]!} = \frac{n!}{k!(n-k)!} = \binom{n}{k} \]
+\end{demostracion}
+
+\begin{teorema}[Teorema de Vandermonde]
+    Para cualesquiera números enteros no negativos \( m, n, \) y \( r \), se cumple que
+
+\[ \binom{n+m}{r} = \sum_{k=0}^{r} \binom{n}{k} \cdot \binom{m}{r-k} \]
+\end{teorema}
+
+\begin{demostracion}[Idea de la prueba]
+
+Sea $A$ y $B$ conjuntos disjuntos tal que $|A|=n$ y $|B|=m$, entonces $|A \cup B|=n+m$.; Supongamos ahora que queremos formar un subconjunto de $r$ elementos de modo que $k\leq r$ sean elementos del conjunto $A$ y $r-k$ sean elementos del conjunto $B$, ¿cuántos subconjuntos hay de este tipo? podemos escoger $k$ elmentos del conjunto $A$ de $\displaystyle\binom{n}{k}$ formas mientras que podemos escoger $r-k$ elementos del conjunto $B$ de $\displaystyle\binom{m}{r-k}$ formas, así hay por el principio de la multiplicación $$\binom{n}{k}\binom{m}{r-k}$$ subconjuntos de $r$ elementos donde $k$ son elementos de $A$ y $r-k$ elementos de $B$.  Para hallar todos los subconjuntos de $r$ elementos de $A\cup B$ podemos separarlo en casos disjuntos para cada $k$, entonces el total de subconjuntos de $r$ elementos de $A\cup B$ son el total de subconjuntos con $0$ elementos en $A$ y $k$ elementos en $B$, más el total de subconjuntos con $1$ elemento en $A$ y $k-1$ elementos en $B$, más el total de subconjuntos con $2$ elemento en $A$ y $k-2$ elementos en $B$, así sucesivamente hasta llegar a solo contar los subconjuntos con $k$ elementos en $A$ y ningún elemento en $B$, cada uno de estos casos son disjuntos y por lo tanto tenemos 
+\[ \binom{n+m}{r} = \sum_{k=0}^{r} \binom{n}{k} \cdot \binom{m}{r-k}. \]
+%Supongamos que tenemos dos grupos de estudiantes: \(m\) estudiantes en el Grupo A y \(n\) estudiantes en el Grupo B. Queremos formar un comité de \(r\) estudiantes seleccionados de ambos grupos. Demostraremos que el número total de formas de formar este comité es igual a \(\displaystyle \binom{m+n}{r}\). La identidad de Vandermonde nos dice que el número de formas de seleccionar \(r\) estudiantes de \(m+n\) candidatos es igual a:
+
+%\[ \sum_{k=0}^{r} \binom{m}{k} \binom{n}{r-k} \]
+%Esto representa la suma de todas las formas posibles de seleccionar \(k\) estudiantes del Grupo A y \(r-k\) estudiantes del Grupo B para formar el comité.\\\\
+%El número total de formas de seleccionar \(r\) estudiantes de \(m+n\) candidatos es simplemente \(\displaystyle \binom{m+n}{r}\).\\\\
+%Ambos enfoques deben dar el mismo resultado. 
+
+Realizamos una prueba numérica para \(m = 3\), \(n = 2\) y \(r = 2\):
+
+\[ \sum_{k=0}^{2} \binom{3}{k} \binom{2}{2-k} \stackrel{?}{=} \binom{5}{2} \]
+Calculamos ambos lados:
+
+\[ \text{Lado izquierdo:} \quad \binom{3}{0} \binom{2}{2} + \binom{3}{1} \binom{2}{1} + \binom{3}{2} \binom{2}{0} \]
+
+\[ = 1 \cdot 1 + 3 \cdot 2 + 3 \cdot 1 = 1 + 6 + 3 = 10 \]
+
+\[ \text{Lado derecho:} \quad \binom{5}{2} = \frac{5!}{2!3!} = \frac{120}{12} = 10 \]
+Ambos lados dan el mismo resultado, confirmando la identidad de Vandermonde en este caso específico.
+\end{demostracion}
+
+\subsection{Modelo de cadenas binarias}
+Hasta el momento se ha dicho que $\displaystyle\binom{n}{k}$ puede interpretarse como la cantidad de subconjuntos de $k$ elementos de un conjunto de cardinalidad $n$, es decir, la cantidad de formas de escoger $k$ objetos entre $n$ objetos diferentes. Ahora bien, esta interpretación de un número combinatorio puede asociarse a otro problema:¿Cuántas cadenas de unos y ceros se pueden formar con $k$ unos y $n-k$ ceros?
+
+Podemos interpretar esto como tener a disposición $n$ espacios vacíos en los que se debe colocar o bien un 1 o bien un 0.
+
+\begin{center}
+    $\underbrace{1\ 0\ 0\ 1\ 0\ 1...0\ 1\ 1\ 0}_{n}$
+\end{center}
+
+Además se tiene prefijada la cantidad de unos y ceros que deben colocarse en esos $n$ espacios, en total son exactemente $k$ unos y, por ende, los restantes $n-k$ deben ser ceros.  Entonces basta conocer de cuántas formas puedo colocar los unos y luego las posiciones de los ceros quedan determinadas. Es así como se tiene que
+la cantidad de cadenas de longitud $n$ de $k$ unos y $n-k$ ceros está dada por $\displaystyle\binom{n}{k}$.
+
+\begin{ejemplo}
+Pruebe usando cadenas de ceros o unos que:
+\[\binom{n}{k}=\binom{n-2}{k-2}+2\binom{n-2}{k-1}+\binom{n-2}{k}\]
+\end{ejemplo}
+
+\begin{solucion}
+    Asumamos que $k$ es la cantidad de unos, así que $\binom{n}{k}$ cuenta de \textit{golpe} la cantidad de tales cadenas de longitud $n$. Bajo la misma idea, ¿qué podemos decir de los 3 términos de la derecha?
+
+    Para $\displaystyle \binom{n-2}{k-2}$ son las cadenas de longitud $n-2$ pero con $k-2$ unos. Para hacerlas de longitud $n$ con $k$ unos. se agrega al final de estas dos veces $1$, al hacerlo obtenemos el total de cadenas de longitud $n$ conjunos pero que terminan en $\ldots 11$.
+
+    Para $\displaystyle \binom{n-2}{k-1}$ son las cadenas de longitud $n-1$ pero con $k-1$ unos. Para hacerla de longitud $n$ con $k$ unos, se agrega al final de estas $01$ o $10$. De manera que hay dos formas para las cadenas calculadas, por ello el coeficiente $2$.
+
+    Para $\binom{n-2}{k}$ son las cadenas de longitud $n-2$ con $k$ unos. Para hacerla de longitud $n$, debemos llenar dos espacios con ceros, es decir, 00, ya que los unos están completos.
+
+    Como cada caso es excluyente del resto, por el principio de la suma tenemos el resultado:
+\[\binom{n}{k}=\binom{n-2}{k-2}+2\binom{n-2}{k-1}+\binom{n-2}{k}\]
+\end{solucion}
+
+\section{Problemas propuestos}
+\begin{problema}
+En el alfabeto Morse, usado en telegrafía, se emplean solamente dos signos: el punto y la raya. ¿Cuántas palabras distintas pueden formarse compuestas de uno, dos, tres, cuatro o cinco signos? Generalice.
+\end{problema}
+
+\begin{problema}
+¿Cuántos números mayores que $3000$ y menores que $4000$ pueden formarse con los dígitos $2$, $3$, $5$ y $7$ a) si cada cifra puede usarse sólo una vez;
+b) si cada cifra puede emplearse las veces que se desee.
+\end{problema}
+
+\begin{problema}
+Si se forman todos los números que resultan de permutar las cifras de $123579$ y se ordenan en forma creciente, ¿qué lugar ocupará el número $537192$?
+\end{problema}
+
+\begin{problema}
+Encuentra el número de cuádruplas ordenadas $(x_1,x_2,x_3,x_4)$ de números impares positivos que satisfacen la ecuación $x_1+x_2+x_3+x_4=98$.
+\end{problema}
+
+\begin{problema}
+    ¿En cuántas formas se pueden ordenar los números $21$, $31$, $41$, $51$, $61$, $71$ y $81$ de tal manera que la suma de cuatro enteros consecutivos son divisibles por $3$?
+\end{problema}
+
+\begin{problema}
+Considere todos los números posibles de 8 cifras diferentes no nulas (como, por ejemplo, $73451962$).
+\begin{enumerate}
+    \item ¿Cuántos de ellos son divisibles entre $5$?
+    \item ¿Cuántos de ellos sin divisibles entre $9$?
+\end{enumerate}
+\end{problema}
+
+\begin{problema}
+¿Cuántos triángulos se pueden formar que tengan como vértices los vértices de un decágono regular?
+\end{problema}
+
+\begin{problema}
+Un número es \textit{capicúa} si se lee igual de izquierda a derecha que de derecha a izquierda. Por ejemplo $7$, $33$ y $252$ son capicúas. ¿Cuántos capicúas hay desde $1$ hasta $2023$?
+\end{problema}
+
+\begin{problema}
+Probar la identidad combinatoria dada en el teorema 1, usando:
+\begin{enumerate}
+    \item La fórmula para combinaciones.
+    \item El principio de la suma.
+\end{enumerate}
+\end{problema}
+
+\begin{problema}
+    Nueve sillas en fila deben ser ocupadas por seis estudiantes y los profesores Alpha, Beta y Gamma. Estos tres profesores llegan antes que los seis estudiantes y deciden elegir sus sillas de manera que cada profesor esté entre dos estudiantes. ¿De cuántas maneras pueden los profesores Alpha, Beta y Gamma elegir sus sillas?
+\end{problema}
+
+\begin{problema}
+Si $n$ puntos distintos situados en una circunferencia se unen de todas las maneras posibles, ¿cuántos puntos de intersección resultan, como máximo?
+\end{problema}
+
+\begin{problema}
+Para escribir todos los números naturales desde $1$ hasta $1000000$, ¿cuántos ceros se necesitan?
+\end{problema}
+
+\begin{problema}
+    Probar que 
+    \[k\binom{n}{k}=n\binom{n-1}{k-1}\]
+\end{problema}
+
+\begin{problema}
+Pruebe que todo $n$ se cumple la siguiente identidad $$\binom{n}{0}-\binom{n}{1}+\binom{n}{2}-\cdots +(-1)^{n-1}\binom{n}{n-1}+(-1)^n\binom{n}{n}=0.$$    
+\end{problema}
+
+\begin{problema}
+En un acto deben hablar $n$ mujeres y $k$ hombres. ¿De cuántas maneras se puede ordenar la lista de oradores con la condición de que no hablen dos hombres consecutivamente?
+\end{problema}
+
+\begin{problema}
+    Dos de los cuadrados de un área de tablero de ajedrez de $7\times 7$ están pintados de amarillo, y el resto están pintados de verde. Dos esquemas de colores son equivalentes si uno se puede obtener a partir del otro aplicando una rotación en el plano del tablero. ¿Cuántos esquemas de colores no equivalentes son posibles?
+\end{problema}
+
+
+\begin{problema}
+Marcos juega un juego de computador en una cuadrícula de $4\times 4$. Cada celda es roja o azul, pero el color sólo se ve si se hace clic en ella. Se sabe que sólo hay dos celdas azules, y que tienen un lado común.
+¿Cuál es el menor número de clics que Marcos tiene que hacer para estar seguro de ver las dos celdas azules en la pantalla?
+\end{problema}
+
+\end{document}

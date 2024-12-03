@@ -1,0 +1,393 @@
+\documentclass[12pt]{article}
+
+
+
+%Paquetes a utilizarse
+\input{Paquetes/package2.tex}
+%\usepackage[margin=2.5cm]{geometry}
+%\usepackage{wasysym}
+%\usepackage{stmaryrd,textcomp}
+%\usepackage{pgf,tikz}
+%\usetikzlibrary{arrows}
+
+\parskip = 2mm   %%%% genera un espacio de X mm entre lo párrafos
+\parindent = 3mm
+\usepackage{multicol}
+\usepackage{iwona}
+
+\newcommand{\tema}{Teorema del binomio}
+\newcommand{\fecha}{Miércoles, 7 de diciembre de 2022}
+\newcommand{\sesion}{Sesión 5}
+
+\begin{document}
+%\thispagestyle{empty}
+%\newpage
+\thispagestyle{empty}
+
+\begin{figure}[h] 
+	\begin{minipage}[b]{0.26\textwidth}
+		\begin{center}
+			\includegraphics[height=3cm]{Logos/UES.png}
+			\par\end{center}
+	\end{minipage} 
+	\begin{minipage}[b]{0.46\textwidth}
+		\begin{center}
+			UNIVERSIDAD DE EL SALVADOR\\ [0.1cm]
+			PROGRAMA JÓVENES TALENTO\\ [0.1cm]
+	        FDTC 2022\\ [0.1cm]
+                NIVEL 5\\ [0.1cm]
+			COMBINATORIA 
+			\par\end{center}
+	\end{minipage} 
+	\begin{minipage}[b]{0.05\textwidth}
+		\begin{center}
+			\includegraphics[height=2cm]{Logos/LOGO PJT.png}
+			\par\end{center}
+	\end{minipage}
+\end{figure}
+
+\begin{center}
+    \begin{tabular}{p{4.5cm} p{7cm} p{4.5cm}}
+        \tema & \centering\fecha & \hfill\sesion
+    \end{tabular}
+\end{center}
+
+\section{Propiedades de los numeros combinatorios}
+
+\subsection{Propiedad del conjunto potencia}
+
+\begin{ejemplo}
+    
+Antes de iniciar calulemos de una forma distinta el número combinatorio $C^{2}_{n}$.
+
+\end{ejemplo}
+
+\begin{solucion}
+    
+El número combinatorio $C^{2}_{n}$ calcula el número de formas de elegir una pareja de $n$ elementos disponibles. Al hacer la comparación con el ejemplo particular, podemos responder las siguientes interrogantes: 
+
+sabiendo que tenemos $n$ elementos disponibles e imaginando cada uno de ellos listados
+
+\begin{itemize}
+    \item ¿Cuántas parejas se pueden elegir con el primer elemento?
+    \item ¿Cuántas parejas se pueden elegir con el segundo elemento?
+    \item ¿Cuántas parejas se pueden elegir con el tercer elemento?
+    
+    \qquad \qquad \qquad \qquad \qquad \qquad \vdots
+    
+    \item ¿Cuántas parejas se pueden elegir con el penúltimo elemento?
+\end{itemize}
+
+En consecuencia, podemos afirmar que $C^{2}_{n}$ es igual a la suma de los números naturales desde $1$ hasta $(n-1)$, es decir:
+
+\begin{center}
+    $C^{2}_{n} = (n-1) + (n-2) + ... + 2 + 1$ \\ \hfill \\
+    $C^{2}_{n} = \displaystyle\sum_{k=1}^{n-1} k$ \\ \hfill \\
+    $C^{2}_{n} = \frac{n (n-1)}{2}$.
+\end{center}
+
+\end{solucion}
+
+El ejemplo anterior nos servirá para demostrar el siguiente teorema:
+
+\begin{teorema}
+    Para todo $n$ $\in$ $\mathbb{Z}^{+}_{0}$ se cumple la siguiente identidad combinatoria:
+
+    \begin{center}
+        $2^n = C^{0}_{n} + C^{1}_{n} + C^{2}_{n} + ... + C^{n-1}_{n} + C^{n}_{n} = \displaystyle\sum_{k=0}^{n} C^{k}_{n}$.
+    \end{center}
+\end{teorema}
+
+\begin{demostracion}
+    Sabemos que la cantidad total de subconjuntos que se pueden formar de un conjunto con $n$ elementos es $2^n$ (Propiedad del conjunto potencia).
+
+    Bajo esa idea, ¿cómo podemos calcular este $2^n$? Ya sabemos que $C^{2}_{n}$ calcula el número de formas de elegir parejas de $n$ elementos disponibles, en otras palabras, calcula el número de subconjuntos con $2$ elementos a partir de un conjunto de cardinalidad $n$.
+
+    Hagamos, entonces lo mismo que hacíamos para obtener el conjunto potencia.
+
+    \begin{itemize}
+        \item Para el conjunto $\varnothing$ $\rightarrow$ $C^{0}_{n}$.
+        \item Para subconjuntos con $1$ elemento $\varnothing$ $\rightarrow$ $C^{1}_{n}$.
+        \item Para subconjuntos con $2$ elementos $\varnothing$ $\rightarrow$ $C^{2}_{n}$.
+        
+        \qquad \qquad \qquad \qquad \quad \vdots
+        
+        \item Para subconjuntos con $n$ elementos $\varnothing$ $\rightarrow$ $C^{n}_{n}$.
+    \end{itemize}
+
+    Entonces,
+
+    \begin{center}
+        $2^n = C^{0}_{n} + C^{1}_{n} + C^{2}_{n} + ... + C^{n-1}_{n} + C^{n}_{n} = \displaystyle\sum_{k=0}^{n} C^{k}_{n}$
+    \end{center}
+\end{demostracion}
+
+\subsection{Identidad de Pascal}
+
+\begin{teorema}
+
+    Para todo $n, k$ $\in$ $\mathbb{Z}^{+}_{0}$ y $n \geq k \geq 0$, se tiene:
+
+    \begin{center}
+        $C^{k}_{n} = C^{k-1}_{n-1} + C^{k}_{n-1}$
+    \end{center}
+\end{teorema}
+
+\begin{demostracion}
+
+    Recordemos el modelo de caminos. El número combinatorio $C^{k}_{n}$ calculaba  el  número de  caminos  de  longitud mínima  que  iban  de  un punto A hacia un punto B.
+
+    \begin{center}
+        \includegraphics[scale=0.6]{Imagenes/IMG5/Caminos6.png}
+    \end{center}
+
+    Notemos que el camino para para llegar a B se puede hacer de dos formas: pasar por $B_1$ o por $B_2$. Entonces, 
+
+    \begin{itemize}
+        \item ¿Cuántos caminos hay de A hacia B pasando por $B_1$?
+
+        \begin{center}
+            $C^{k}_{n-1}$
+        \end{center}
+
+        \item ¿Cuántos caminos hay de A hacia B pasando por $B_2$?
+
+        \begin{center}
+            $C^{k-1}_{n-1}$
+        \end{center}
+    \end{itemize}
+
+    Y, por el principio de la suma, el total de caminos sería:
+
+    \begin{center}
+        $C^{k}_{n} = C^{k-1}_{n-1} + C^{k}_{n-1}$
+    \end{center}
+    
+\end{demostracion}
+
+\begin{demostracion} {(Algebraica).}
+    Por definición del coeficiente binomial, sabemos que:
+
+    \begin{center}
+         $C^{k}_{n-1} = \frac{(n-1)!}{(n-1-k)!k!}$ y $C^{k-1}_{n-1} = \frac{(n-1)!}{(n-k)!(k-1)!}$
+    \end{center}
+
+    Entonces, partiendo del lado derecho de la ecuación, se tien:
+
+    \begin{align}
+        C^{k-1}_{n-1} + C^{k}_{n-1} & =\frac{(n-1)!}{(n-1-k)!k!}+\frac{(n-1)!}{(n-k)!(k-1)!} \\
+        & = \frac{(n-1)!(n-k)}{(n-1-k)!k!(n-k)}+\frac{(n-1)!(k)}{(n-k)!(k-1)!(k)} \\
+        & = \frac{(n-1)!(n-k)}{(n-k)!k!}+\frac{(n-1)!(k)}{(n-k)!(k)!} \\
+        & = \frac{(n-1)!(n-k)+(n-1)!(k)}{(n-k)!k!} \\
+        & = \frac{(n-1)!(n-k+k)}{(n-k)!k!} \\
+        & = \frac{(n-1)!(n)}{(n-k)!k!} \\
+        & = \frac{(n)!}{(n-k)!k!} = C^{k}_{n}
+    \end{align}
+    
+\end{demostracion}
+
+\subsection{Propiedad simétrica}
+
+\begin{teorema}
+
+    Para todo $n, k$ $\in$ $\mathbb{Z}^{+}_{0}$ y $n \geq k \geq 0$, se tiene:
+
+    \begin{center}
+        $C^{k}_{n} = C^{n-k}_{n}$
+    \end{center}
+\end{teorema}
+
+\begin{demostracion}
+    Podemos decir que, cuando elegimos un subconjunto de $k$ objetos de un conjunto de $n$ objetos diferentes, estamos dejamos un subconjunto de $n-k$ objetos y, como resultado, hay tantas formas de elegir $k$ objetos como dejar (o seleccionar) $n-k$ objetos.
+\end{demostracion}
+
+\begin{demostracion}{(Algebraica).}
+    Notemos que:
+    \begin{center}
+        $C^{k}_{n} = \frac{n!}{(n-k)!k!} = \frac{n!}{(n-k)!k!} = \frac{n!}{(n-k)!(n-(n-k))!} = C^{n-k}_{n}$
+    \end{center}
+\end{demostracion}
+    
+
+\section{Triángulo de Pascal}
+
+\subsection{Definición}
+
+\begin{definicion}
+    En las matemáticas, el \textbf{triángulo de Pascal} es una representación de los coeficientes binomiales ordenados en forma de triángulo. Es llamado así en honor al filósofo y matemático francés Blaise Pascal, quien introdujo esta notación en 1654, en su trabajo \textit{Traité du triangle arithmétique}.
+\end{definicion}
+
+Acomodemos en una tabla los valores de $C^{k}_{n}$ con los valores de $n$ por filas y los de $k$ por columnas:
+
+\begin{center}
+    \begin{tabular}{|cc|ccccccccc|}
+    \hline
+      & r & 0 & 1 & 2  & 3  & 4  & 5  & 6  & 7 & 8 \\
+    n &   &   &   &    &    &    &    &    &   &   \\ \hline
+    0 &   & 1 &   &    &    &    &    &    &   &   \\
+    1 &   & 1 & 1 &    &    &    &    &    &   &   \\
+    2 &   & 1 & 2 & 1  &    &    &    &    &   &   \\
+    3 &   & 1 & 3 & 3  & 1  &    &    &    &   &   \\
+    4 &   & 1 & 4 & 6  & 4  & 1  &    &    &   &   \\
+    5 &   & 1 & 5 & 10 & 10 & 5  & 1  &    &   &   \\
+    6 &   & 1 & 6 & 15 & 20 & 15 & 6  & 1  &   &   \\
+    7 &   & 1 & 7 & 21 & 35 & 35 & 21 & 7  & 1 &   \\
+    8 &   & 1 & 8 & 28 & 56 & 70 & 56 & 28 & 8 & 1 \\ \hline
+    \end{tabular}
+\end{center}
+
+También pueden ubicarse en un arreglo simétrico de la siguiente manera:
+
+\begin{center}
+\begin{tabular}{p{0.6cm} p{0.6cm} p{0.6cm} p{0.6cm} p{0.6cm} p{0.6cm} p{0.6cm} p{0.6cm} p{0.6cm} p{0.6cm} p{0.6cm} p{0.6cm} p{0.6cm} p{0.6cm} p{0.6cm} p{0.6cm} p{0.6cm}}
+  &   &   &   &    &    &    &    & \centering1  &    &    &    &    &   &   &   &   \\
+  &   &   &   &    &    &    & \centering1  &    & \centering1  &    &    &    &   &   &   &   \\
+  &   &   &   &    &    & \centering1  &    & \centering2  &    & \centering1  &    &    &   &   &   &   \\
+  &   &   &   &    & \centering1  &    & \centering3  &    & \centering3  &    & \centering1  &    &   &   &   &   \\
+  &   &   &   & \centering1  &    & \centering4  &    & \centering6  &    & \centering4  &    & \centering1  &   &   &   &   \\
+  &   &   & \centering1 &    & \centering5  &    & \centering10 &    & \centering10 &    & \centering5  &    & \centering1 &   &   &   \\
+  &   & \centering1 &   & \centering6  &    & \centering15 &    & \centering20 &    & \centering15 &    & \centering6  &   & \centering1 &   &   \\
+  & \centering1 &   & \centering7 &    & \centering21 &    & \centering35 &    & \centering35 &    & \centering21 &    & \centering7 &   & \centering1 &   \\
+\centering1 &   & \centering8 &   & \centering28 &    & \centering56 &    & \centering70 &    & \centering56 &    & \centering28 &   & \centering8 &   & \centering1
+\end{tabular}
+\end{center}
+
+La \textbf{Identidad de Pascal} nos dice que todo elemento del triángulo es igual a la suma de los dosque se encuentran directamente sobre él. Esto quiere decir que si construimos un arreglo triangular de números (comenzando y terminando cada fila con 1), de modo que todo número interior sea la suma de los dos que están encima de él, los números que aparecen son precisamente los números combinatorios. 
+
+El triángulo de Pascal encierra muchas relaciones numéricas, por ejemplo, la suma de todos los números en la n-ésima fila es $2^n$.
+
+\section{Teorema del binomio}
+
+\subsection{Problema introductorio}
+
+Consideremos $(a+b)^5$. Al desarrollarlo, ¿con qué coeficiente aparece el término cuya parte literal es $a^3b^2$?
+
+Para desarrollar $(a+b)^5= (a+b)(a+b)(a+b)(a+b)(a+b)$, de cada factor hay que seleccionar la $a$ o la $b$ y luego multiplicar esos cinco términos. Por ejemplo, el arreglo $aabba$ representa el escoger la $a$ en los factores primero, segundo y quinto, y escoger la $b$ en los factores tercero y cuarto. Como en cada factor hay dos opciones para elegir, la cantidad de posibles arreglos es $2^5= 32$, pero de estos arreglos algunos serán términos semejantes, por ejemplo $aabba$, $bbaaa$, $ababa$ y $baaab$ son algunos de los arreglos que corresponden al término $a^3b^2$, de manera que el coeficiente del término con parte literal $a^3b^2$ en el desarrollo de $(a+b)^5$ se obtiene al contar la cantidad de arreglos de cinco letras que pueden hacerse con tres $a$ y dos $b$, esto es $C^{3}_{5}$ porque solo se necesita seleccionar entre los 5 espacios disponibles los 3 que serán ocupados por las $a$ y luego las $b$ se colocan automáticamente, como una cadena binaria.
+
+Ahora, si estudiamos el caso general, al desarrollar $(x+y)^n$, como son $n$ factores, cada arreglo estará formado por $n$ letras de las cuales algunas, digamos $k$ (con $0 \leq k \leq n$), serán $y$ y el resto, $n-k$, serán $x$, por lo que el término con parte literal $x^{n-k} y^k$ tendrá coeficiente $C^{k}_{n}$. Además, como hay $n+1$ opciones para los valores de $k$ (es decir para la cantidad de $y$’s en el arreglo), el desarrollo de $(x+y)^n$ tendrá $n+1$ términos. 
+
+\subsection{Teorema del binomio}
+
+En general, el desarrollo del binomio $(x+y)^n$ es:
+
+\begin{center}
+    $(x+y)^n= C^{0}_{n} x^{n} + C^{1}_{n} x^{n-1} y^{1} + C^{2}_{n} x^{n-2} y^{2} + ... + C^{n-1}_{n} x^{1} y^{n-1} + C^{n}_{n} y^{n}$ \\ \hfill \\
+    $(x+y)^n= \displaystyle\sum_{k=0}^{n} C^{k}_{n} x^{n-k} y^{k}$
+\end{center}
+
+\textbf{Observación 1:} si se consideran los términos en el orden inverso y utilizando la propiedad simétrica de los números combinatorios, podría escribirse la identidad de la manera siguiente:
+
+\begin{center}
+    $(x+y)^n=\displaystyle \sum_{k=0}^{n} C^{k}_{n} x^{k} y^{n-k}$
+\end{center}
+
+\textbf{Observación 2:} una identidad ya conocida se obtiene fácilmente sustituyendo en la igualdadanterior los valores x = 1, y = 1 , ¿cuál es esa identidad?
+
+\subsection{Ejercicios}
+
+\begin{ejercicio}
+    Obtener el resultado de desarrollar $(x+ 5y^3)^4$.
+\end{ejercicio}
+
+\begin{ejercicio}
+    Si se obtiene la expansión de $(1 +x)^{500}$ encontrar el coeficiente de $x^{276}$.
+\end{ejercicio}
+
+\begin{ejercicio}
+    Encontrar el término que no contiene a $x$ en el desarrollo de
+
+    \begin{center}
+        $(\sqrt{x} + \frac{1}{\sqrt[4]{x}})^9$
+    \end{center}
+\end{ejercicio}
+
+\begin{ejercicio}
+    Justifique utilizando el triángulo de Pascal las identidades combinatorias de Chu Shih Chieh:
+
+    \begin{center}
+        $C^{r}_{r} + C^{r}_{r+1} + ... + C^{r}_{n} = C^{r+1}_{n+1}$ \\ \hfill \\
+        $C^{0}_{r} + C^{1}_{r+1} + ... + C^{k}_{r+k} = C^{k}_{r+k+1}$
+    \end{center}
+\end{ejercicio}
+
+\begin{ejercicio}
+    Utilizar el teorema del binomio para probar la fórmula
+
+    \begin{center}
+        $\binom{n}{0} - \binom{n}{1} + \binom{n}{2} - \binom{n}{3} + ... + (-1)^n \binom{n}{n} = 0$
+    \end{center}
+
+    Observa que la identidad anterior equivale a decir que en una fila del triángulo de Pascal, la suma de los combinatorios pares es igual a la suma de los impares.
+\end{ejercicio}
+
+\begin{ejercicio}
+    Demuestre
+
+    \begin{center}
+        $\sum_{r=0}^{n} 3^{r} C^{r}_{n} = 4^{n}$
+    \end{center}
+\end{ejercicio}
+
+\begin{ejercicio}
+    Encuentra el coeficiente de $x^n$ en la expansión de
+
+    \begin{center}
+        $(1+x)^{2n} + x (1+x)^{2n-1} + x^2 (1+x)^{2n-2} + ... + x^n (1+x)^{n}$
+    \end{center}
+\end{ejercicio}
+
+\begin{ejercicio}
+    Probar que para cualquier número natural se tiene la fórmula
+
+    \begin{center}
+        $\binom{n}{0}^2 + \binom{n}{1}^2 + \binom{n}{2}^2 + \binom{n}{3}^2 + ... + \binom{n}{n}^2 = \binom{2n}{n}$
+    \end{center}
+
+    utilizando el teorema del binomio (Sugerencia: Estudiar algún coeficiente de $(1 +x)^{2n})$.
+\end{ejercicio}
+
+\begin{ejercicio}
+    Escribe en cada una de las casillas vacías de la pirámide siguiente un número natural mayor que 1 de modo que el número escrito en cada casilla sea igual al producto de los números escritos en las dos casillas sobre las que está apoyada.
+
+    \begin{center}
+        \includegraphics[scale=0.6]{Imagenes/IMG5/Piramide.png}
+    \end{center}
+\end{ejercicio}
+
+\begin{ejercicio}
+    Considere los reales positivos $p$ y $q$ tales que $p+q=1$. Demuestre que
+
+    \begin{center}
+        Si $r_k = \binom{n}{k} p^{k}q^{n-k}$, con $0 \leq k \leq n \ \Rightarrow \ \sum_{k=0}^{n} (k \cdot r_k) = np$
+    \end{center}
+\end{ejercicio}
+
+\begin{ejercicio}
+    Se construye un triángulo aritmético de la siguiente manera: primero se escriben en fila los números del 0 al 500, luego, cada número de la segunda fila es el resultado de sumar los dos números consecutivos de la primera fila que quedan justo sobre él y así se continúa formando el triángulo hasta que una de las filas está formada por solo un número. Demostrar que ese último número es múltiplo de 500.
+\end{ejercicio}
+
+\begin{ejercicio}
+    Pruebe que el número de subconjuntos de $\{1, 2, ..., n\}$ con $k$ elementos y sin enteros consecutivos es
+
+    \begin{center}
+        $\binom{n+k+1}{k}$
+    \end{center}
+\end{ejercicio}
+
+\begin{ejercicio}
+    En la expansión $(\frac{20x^3}{y^5} + \frac{y^2}{x})^{67}$ determinar:
+
+    \renewcommand{\labelenumi}{\alph{enumi})}
+    \begin{enumerate}
+        \item El vigésimo termino.
+        \item El coeficiente del término cuarenta y cinco.
+        \item El coeficiente de $x^{23}$, si es posible (si no, argumente por qué no existe).
+        \item ¿Cuántos términos tiene la expansión?
+    \end{enumerate}
+\end{ejercicio}
+
+\begin{ejercicio}
+    Encuentre el coeficiente de $x^5$ en la expansión de $(1 +x+x^2)^8 + (1 +x+x^2)^9$.
+\end{ejercicio}
+
+\end{document}

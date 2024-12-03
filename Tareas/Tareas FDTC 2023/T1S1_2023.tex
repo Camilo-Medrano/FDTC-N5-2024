@@ -1,0 +1,72 @@
+\documentclass[letterpaper,12pt]{article}
+\usepackage{enumerate}
+\usepackage{enumitem}
+
+
+%Paquetes a utilizarse
+\input{Paquetes/package2.tex}
+%\usepackage[margin=2.5cm]{geometry}
+%\usepackage{wasysym}
+%\usepackage{stmaryrd,textcomp}
+%\usepackage{pgf,tikz}
+%\usetikzlibrary{arrows}
+
+\parskip = 2mm   %%%% genera un espacio de X mm entre lo párrafos
+\parindent = 3mm
+\usepackage{multicol}
+\usepackage[math]{iwona}
+
+\newcommand{\tema}{Sesión 1}
+\newcommand{\fecha}{Entrega: 5 de diciembre}
+\newcommand{\sesion}{Tarea 1}
+
+\begin{document}
+%\thispagestyle{empty}
+%\newpage
+\thispagestyle{empty}
+
+\begin{figure}[h] 
+	\begin{minipage}[b]{0.26\textwidth}
+		\begin{center}
+			\includegraphics[height=3cm]{Logos/UES.png}
+			\par\end{center}
+	\end{minipage} 
+	\begin{minipage}[b]{0.46\textwidth}
+		\begin{center}
+			UNIVERSIDAD DE EL SALVADOR\\ [0.1cm]
+			PROGRAMA JÓVENES TALENTO\\ [0.1cm]
+	        FDTC 2023\\ [0.1cm]
+                NIVEL 5\\ [0.1cm]
+			\textbf{COMBINATORIA} 
+			\par\end{center}
+	\end{minipage} 
+	\begin{minipage}[b]{0.05\textwidth}
+		\begin{center}
+			\includegraphics[height=2cm]{Logos/LOGO PJT.png}
+			\par\end{center}
+	\end{minipage}
+\end{figure}
+
+\begin{center}
+    \begin{tabular}{p{4.5cm} p{7cm} p{4.5cm}}
+        \tema & \centering\fecha & \hfill\sesion
+    \end{tabular}
+\end{center}
+
+\begin{problema}[3 puntos]
+    El mayor de $r$ enteros consecutivos es $k$ ¿Cuál es el menor?
+\end{problema}
+
+\begin{problema}[7 puntos]
+    En una competición de ajedrez, un torneo consta de 5 rondas. Cada ronda tiene un conjunto diferente de 8 jugadores. El organizador del torneo decide otorgar premios especiales a los jugadores que hayan tenido un rendimiento destacado.
+    \begin{enumerate}
+        \item Si un jugador recibe un premio especial en cada ronda, ¿cuántos conjuntos diferentes de premios especiales puede recibir un jugador a lo largo del torneo?
+        \item Si el organizador decide otorgar un premio adicional al final del torneo al jugador que ha recibido premios especiales en al menos $3$ rondas, ¿cuántos jugadores pueden ser elegibles para este premio adicional?
+        \item Supongamos que un jugador ha recibido premios especiales en rondas impares (rondas 1, 3 y 5) pero no en rondas pares. ¿Cuántos conjuntos diferentes de premios especiales puede recibir este jugador?
+    \end{enumerate}
+\end{problema}
+
+\begin{credito}[1 punto]
+    ¿Cuántos divisores positivos tiene el número $21168$?
+\end{credito}
+\end{document}
