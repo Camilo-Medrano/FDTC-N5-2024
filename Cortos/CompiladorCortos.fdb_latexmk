@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1733239351.8161 "/home/programa/Documents/LaTex/FDTC N5/Cortos/CompiladorCortos.tex" "CompiladorCortos.pdf" "CompiladorCortos" 1733239356.99384 0
+["pdflatex"] 1733241208.89004 "/home/programa/Documents/LaTex/FDTC N5/Cortos/CompiladorCortos.tex" "CompiladorCortos.pdf" "CompiladorCortos" 1733241214.2468 0
   "../Imagenes/IMG1/venn.png" 1733259294 147695 9e6cfa940b1515811eb88d976a216b97 ""
   "../Logos/LOGO PJT.png" 1733259312 13279 4e837033570cfb422efdccd79e1188b0 ""
   "../Logos/UES.png" 1733259312 1830544 36717e1c0146291d2d4fb036f331fe6e ""
@@ -185,10 +185,10 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1731860399.46445 5472669 54eaf61a88b6b7896ebd0dac973cb29c ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1731860561 8215667 6d85dedfba85827bec38aed8151e68b7 ""
-  "CompiladorCortos.aux" 1733239356.90134 578 a66653781c3d78f70e1695517c319467 "pdflatex"
-  "CompiladorCortos.out" 1733239353.00538 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "CompiladorCortos.aux" 1733241214.14777 578 a66653781c3d78f70e1695517c319467 "pdflatex"
+  "CompiladorCortos.out" 1733241209.86994 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   "CompiladorCortos.tex" 1733239351.5054 1435 8d6785b5afc17ff264097811ca74d68c ""
-  "S1C1.tex" 1733238313.34447 2218 b40f7a0f2da6f28cce00408ac781c80e ""
+  "S1C1.tex" 1733241208.416 2247 c0bba04b72260cc9783aaaa350ed9a5b ""
   (generated)
   "CompiladorCortos.aux"
   "CompiladorCortos.log"
